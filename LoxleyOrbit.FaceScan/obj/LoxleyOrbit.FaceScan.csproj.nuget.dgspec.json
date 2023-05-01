@@ -1,0 +1,128 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\CAMERAPROJECT\\Change-EMGU-V3\\LoxleyOrbit.FaceScan\\LoxleyOrbit.FaceScan.csproj": {}
+  },
+  "projects": {
+    "E:\\CAMERAPROJECT\\Change-EMGU-V3\\LoxleyOrbit.FaceScan.Models\\LoxleyOrbit.FaceScan.Models.csproj": {
+      "restore": {
+        "projectUniqueName": "E:\\CAMERAPROJECT\\Change-EMGU-V3\\LoxleyOrbit.FaceScan.Models\\LoxleyOrbit.FaceScan.Models.csproj",
+        "projectName": "LoxleyOrbit.FaceScan.Models",
+        "projectPath": "E:\\CAMERAPROJECT\\Change-EMGU-V3\\LoxleyOrbit.FaceScan.Models\\LoxleyOrbit.FaceScan.Models.csproj",
+        "frameworks": {
+          "net40": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net40": {}
+      }
+    },
+    "E:\\CAMERAPROJECT\\Change-EMGU-V3\\LoxleyOrbit.FaceScan\\LoxleyOrbit.FaceScan.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\CAMERAPROJECT\\Change-EMGU-V3\\LoxleyOrbit.FaceScan\\LoxleyOrbit.FaceScan.csproj",
+        "projectName": "LoxleyOrbit.FaceScan",
+        "projectPath": "E:\\CAMERAPROJECT\\Change-EMGU-V3\\LoxleyOrbit.FaceScan\\LoxleyOrbit.FaceScan.csproj",
+        "packagesPath": "C:\\Users\\HibariKaito\\.nuget\\packages\\",
+        "outputPath": "E:\\CAMERAPROJECT\\Change-EMGU-V3\\LoxleyOrbit.FaceScan\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\HibariKaito\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "projectReferences": {
+              "E:\\CAMERAPROJECT\\Change-EMGU-V3\\LoxleyOrbit.FaceScan.Models\\LoxleyOrbit.FaceScan.Models.csproj": {
+                "projectPath": "E:\\CAMERAPROJECT\\Change-EMGU-V3\\LoxleyOrbit.FaceScan.Models\\LoxleyOrbit.FaceScan.Models.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "dependencies": {
+            "AForge": {
+              "target": "Package",
+              "version": "[2.2.5, )"
+            },
+            "AForge.Imaging": {
+              "target": "Package",
+              "version": "[2.2.5, )"
+            },
+            "AForge.Video": {
+              "target": "Package",
+              "version": "[2.2.5, )"
+            },
+            "AForge.Video.DirectShow": {
+              "target": "Package",
+              "version": "[2.2.5, )"
+            },
+            "CSCore": {
+              "target": "Package",
+              "version": "[1.2.1.2, )"
+            },
+            "Emgu.CV": {
+              "target": "Package",
+              "version": "[4.6.0.5131, )"
+            },
+            "Emgu.CV.Bitmap": {
+              "target": "Package",
+              "version": "[4.6.0.5131, )"
+            },
+            "Emgu.CV.runtime.windows": {
+              "target": "Package",
+              "version": "[4.6.0.5131, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.2, )"
+            },
+            "System.Drawing.Primitives": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
+            "System.Runtime": {
+              "target": "Package",
+              "version": "[4.3.1, )"
+            },
+            "System.Runtime.InteropServices.RuntimeInformation": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
+            "ZedGraph": {
+              "target": "Package",
+              "version": "[5.1.7, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

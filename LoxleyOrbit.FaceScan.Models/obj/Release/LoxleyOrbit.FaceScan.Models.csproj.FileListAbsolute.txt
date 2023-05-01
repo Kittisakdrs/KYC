@@ -1,0 +1,6 @@
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan.Models\bin\Release\LoxleyOrbit.FaceScan.Models.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan.Models\bin\Release\LoxleyOrbit.FaceScan.Models.pdb
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan.Models\obj\Release\LoxleyOrbit.FaceScan.Models.csproj.AssemblyReference.cache
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan.Models\obj\Release\LoxleyOrbit.FaceScan.Models.csproj.CoreCompileInputs.cache
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan.Models\obj\Release\LoxleyOrbit.FaceScan.Models.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan.Models\obj\Release\LoxleyOrbit.FaceScan.Models.pdb

@@ -1,0 +1,18 @@
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan.Models\bin\Debug\LoxleyOrbit.FaceScan.Models.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan.Models\bin\Debug\LoxleyOrbit.FaceScan.Models.pdb
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan.Models\obj\Debug\LoxleyOrbit.FaceScan.Models.csproj.CoreCompileInputs.cache
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan.Models\obj\Debug\LoxleyOrbit.FaceScan.Models.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan.Models\obj\Debug\LoxleyOrbit.FaceScan.Models.pdb
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan.Models\obj\Debug\LoxleyOrbit.FaceScan.Models.csproj.AssemblyReference.cache
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan.Models\bin\Debug\LoxleyOrbit.FaceScan.Models.dll
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan.Models\bin\Debug\LoxleyOrbit.FaceScan.Models.pdb
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan.Models\obj\Debug\LoxleyOrbit.FaceScan.Models.csproj.CoreCompileInputs.cache
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan.Models\obj\Debug\LoxleyOrbit.FaceScan.Models.dll
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan.Models\obj\Debug\LoxleyOrbit.FaceScan.Models.pdb
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan.Models\obj\Debug\LoxleyOrbit.FaceScan.Models.csproj.AssemblyReference.cache
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan.Models\bin\Debug\LoxleyOrbit.FaceScan.Models.dll
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan.Models\bin\Debug\LoxleyOrbit.FaceScan.Models.pdb
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan.Models\obj\Debug\LoxleyOrbit.FaceScan.Models.csproj.AssemblyReference.cache
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan.Models\obj\Debug\LoxleyOrbit.FaceScan.Models.csproj.CoreCompileInputs.cache
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan.Models\obj\Debug\LoxleyOrbit.FaceScan.Models.dll
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan.Models\obj\Debug\LoxleyOrbit.FaceScan.Models.pdb

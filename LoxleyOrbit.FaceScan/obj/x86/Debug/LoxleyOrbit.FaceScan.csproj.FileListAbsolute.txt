@@ -1,0 +1,606 @@
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\cef.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\cef_100_percent.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\cef_200_percent.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\cef_extensions.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\chrome_elf.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\d3dcompiler_47.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\devtools_resources.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\icudtl.dat
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\libcef.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\libEGL.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\libGLESv2.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\am.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\ar.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\bg.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\bn.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\ca.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\cs.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\da.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\de.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\el.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\en-GB.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\en-US.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\es-419.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\es.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\et.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\fa.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\fi.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\fil.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\fr.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\gu.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\he.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\hi.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\hr.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\hu.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\id.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\it.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\ja.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\kn.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\ko.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\lt.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\lv.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\ml.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\mr.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\ms.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\nb.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\nl.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\pl.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\pt-BR.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\pt-PT.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\ro.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\ru.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\sk.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\sl.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\sr.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\sv.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\sw.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\ta.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\te.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\th.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\tr.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\uk.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\vi.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\zh-CN.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\locales\zh-TW.pak
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\natives_blob.bin
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\snapshot_blob.bin
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\swiftshader\libEGL.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\swiftshader\libGLESv2.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\v8_context_snapshot.bin
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\widevinecdmadapter.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\CefSharp.BrowserSubprocess.Core.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\CefSharp.BrowserSubprocess.Core.pdb
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\CefSharp.BrowserSubprocess.exe
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\CefSharp.BrowserSubprocess.pdb
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\CefSharp.Core.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\CefSharp.Core.pdb
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\CefSharp.Core.xml
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\CefSharp.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\CefSharp.pdb
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\CefSharp.XML
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\CefSharp.WinForms.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\CefSharp.WinForms.pdb
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\CefSharp.WinForms.XML
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\x86\concrt140.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\x86\cvextern.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\x86\msvcp140.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\x86\opencv_videoio_ffmpeg411.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\x86\vcruntime140.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\haarcascade_frontalface_alt_tree.xml
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\RDNIDlib.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\RDNIDLib.DLX
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\LoxleyOrbit.FaceScan.exe.config
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\LoxleyOrbit.FaceScan.exe
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\LoxleyOrbit.FaceScan.pdb
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\AForge.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\AForge.Video.DirectShow.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\AForge.Video.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\Emgu.CV.UI.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\Emgu.CV.World.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\Newtonsoft.Json.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\ZedGraph.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\AForge.xml
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\AForge.Video.xml
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\AForge.Video.DirectShow.xml
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\Emgu.CV.UI.xml
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\Emgu.CV.World.xml
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\Newtonsoft.Json.xml
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\ZedGraph.xml
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\de\ZedGraph.resources.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\es\ZedGraph.resources.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\fr\ZedGraph.resources.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\hu\ZedGraph.resources.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\it\ZedGraph.resources.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\ja\ZedGraph.resources.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\pt\ZedGraph.resources.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\ru\ZedGraph.resources.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\sk\ZedGraph.resources.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\sv\ZedGraph.resources.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\tr\ZedGraph.resources.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\zh-cn\ZedGraph.resources.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\bin\x86\Debug\zh-tw\ZedGraph.resources.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\obj\x86\Debug\LoxleyOrbit.FaceScan.Form1.resources
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\obj\x86\Debug\LoxleyOrbit.FaceScan.FormKYC.resources
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\obj\x86\Debug\LoxleyOrbit.FaceScan.FormPID.resources
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\obj\x86\Debug\LoxleyOrbit.FaceScan.Properties.Resources.resources
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\obj\x86\Debug\LoxleyOrbit.FaceScan.csproj.GenerateResource.cache
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\obj\x86\Debug\LoxleyOrbit.FaceScan.csproj.CoreCompileInputs.cache
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\obj\x86\Debug\LoxleyOrbit.FaceScan.csproj.CopyComplete
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\obj\x86\Debug\LoxleyOrbit.FaceScan.exe
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\WindowsFormsApp1\obj\x86\Debug\LoxleyOrbit.FaceScan.pdb
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\x86\concrt140.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\x86\cvextern.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\x86\msvcp140.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\x86\opencv_videoio_ffmpeg411.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\x86\vcruntime140.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\LoxleyOrbit.FaceScan.exe
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\AForge.Video.DirectShow.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\AForge.Video.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\Emgu.CV.World.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\LoxleyOrbit.FaceScan.Models.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\Newtonsoft.Json.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\Interop.WMPLib.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\AxInterop.WMPLib.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\AForge.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\Emgu.CV.UI.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\ZedGraph.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\LoxleyOrbit.FaceScan.Models.pdb
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\AForge.xml
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\AForge.Video.xml
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\AForge.Video.DirectShow.xml
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\Emgu.CV.UI.xml
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\Emgu.CV.World.xml
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\Newtonsoft.Json.xml
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\ZedGraph.xml
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\de\ZedGraph.resources.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\es\ZedGraph.resources.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\fr\ZedGraph.resources.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\hu\ZedGraph.resources.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\it\ZedGraph.resources.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\ja\ZedGraph.resources.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\pt\ZedGraph.resources.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\ru\ZedGraph.resources.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\sk\ZedGraph.resources.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\sv\ZedGraph.resources.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\tr\ZedGraph.resources.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\zh-cn\ZedGraph.resources.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\zh-tw\ZedGraph.resources.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.csproj.AssemblyReference.cache
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\obj\x86\Debug\Interop.WMPLib.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\obj\x86\Debug\AxInterop.WMPLib.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.csproj.ResolveComReference.cache
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.Form1.resources
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.FormKYC.resources
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.FormPID.resources
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.FormLoading.resources
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.Properties.Resources.resources
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.csproj.GenerateResource.cache
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.csproj.CoreCompileInputs.cache
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.exe
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.pdb
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\haarcascade_frontalface_alt_tree.xml
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\opencv_core220.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\opencv_imgproc220.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\RDNIDlib.dll
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\RDNIDLib.DLX
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\LoxleyOrbit.FaceScan.exe.config
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\LoxleyOrbit.FaceScan.pdb
+D:\A\DLL\oneML-bootcamp-develop\apps\csharp\WinFormsApp1\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.csproj.CopyComplete
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\x86\concrt140.dll
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\x86\cvextern.dll
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\x86\msvcp140.dll
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\x86\opencv_videoio_ffmpeg411.dll
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\x86\vcruntime140.dll
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\haarcascade_frontalface_alt_tree.xml
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\opencv_core220.dll
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\opencv_imgproc220.dll
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\RDNIDlib.dll
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\RDNIDLib.DLX
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\LoxleyOrbit.FaceScan.exe.config
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\LoxleyOrbit.FaceScan.exe
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\LoxleyOrbit.FaceScan.pdb
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\AForge.dll
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\AForge.Video.DirectShow.dll
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\AForge.Video.dll
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\Emgu.CV.UI.dll
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\Emgu.CV.World.dll
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\LoxleyOrbit.FaceScan.Models.dll
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\Newtonsoft.Json.dll
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\ZedGraph.dll
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\LoxleyOrbit.FaceScan.Models.pdb
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\AForge.xml
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\AForge.Video.xml
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\AForge.Video.DirectShow.xml
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\Emgu.CV.UI.xml
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\Emgu.CV.World.xml
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\Newtonsoft.Json.xml
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\ZedGraph.xml
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\de\ZedGraph.resources.dll
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\es\ZedGraph.resources.dll
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\fr\ZedGraph.resources.dll
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\hu\ZedGraph.resources.dll
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\it\ZedGraph.resources.dll
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\ja\ZedGraph.resources.dll
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\pt\ZedGraph.resources.dll
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\ru\ZedGraph.resources.dll
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\sk\ZedGraph.resources.dll
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\sv\ZedGraph.resources.dll
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\tr\ZedGraph.resources.dll
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\zh-cn\ZedGraph.resources.dll
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\zh-tw\ZedGraph.resources.dll
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\Interop.WMPLib.dll
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\AxInterop.WMPLib.dll
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.csproj.AssemblyReference.cache
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\obj\x86\Debug\Interop.WMPLib.dll
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\obj\x86\Debug\AxInterop.WMPLib.dll
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.csproj.ResolveComReference.cache
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.Form1.resources
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.FormKYC.resources
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.FormPID.resources
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.FormLoading.resources
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.Properties.Resources.resources
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.csproj.GenerateResource.cache
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.csproj.CoreCompileInputs.cache
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.csproj.CopyComplete
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.exe
+C:\MTL\FACE\WinFormsApp1\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.pdb
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\x86\concrt140.dll
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\x86\cvextern.dll
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\x86\msvcp140.dll
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\x86\opencv_videoio_ffmpeg411.dll
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\x86\vcruntime140.dll
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\haarcascade_frontalface_alt_tree.xml
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\opencv_core220.dll
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\opencv_imgproc220.dll
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\RDNIDlib.dll
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\RDNIDLib.DLX
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\LoxleyOrbit.FaceScan.exe.config
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\LoxleyOrbit.FaceScan.exe
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\LoxleyOrbit.FaceScan.pdb
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\AForge.dll
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\AForge.Video.DirectShow.dll
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\AForge.Video.dll
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\Emgu.CV.UI.dll
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\Emgu.CV.World.dll
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\LoxleyOrbit.FaceScan.Models.dll
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\Newtonsoft.Json.dll
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\ZedGraph.dll
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\LoxleyOrbit.FaceScan.Models.pdb
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\AForge.xml
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\AForge.Video.xml
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\AForge.Video.DirectShow.xml
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\Emgu.CV.UI.xml
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\Emgu.CV.World.xml
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\Newtonsoft.Json.xml
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\ZedGraph.xml
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\de\ZedGraph.resources.dll
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\es\ZedGraph.resources.dll
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\fr\ZedGraph.resources.dll
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\hu\ZedGraph.resources.dll
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\it\ZedGraph.resources.dll
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\ja\ZedGraph.resources.dll
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\pt\ZedGraph.resources.dll
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\ru\ZedGraph.resources.dll
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\sk\ZedGraph.resources.dll
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\sv\ZedGraph.resources.dll
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\tr\ZedGraph.resources.dll
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\zh-cn\ZedGraph.resources.dll
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\zh-tw\ZedGraph.resources.dll
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\Interop.WMPLib.dll
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\bin\x86\Debug\AxInterop.WMPLib.dll
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.csproj.AssemblyReference.cache
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\obj\x86\Debug\Interop.WMPLib.dll
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\obj\x86\Debug\AxInterop.WMPLib.dll
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.csproj.ResolveComReference.cache
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.Form1.resources
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.FormKYC.resources
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.FormPID.resources
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.FormLoading.resources
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.Properties.Resources.resources
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.csproj.GenerateResource.cache
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.csproj.CoreCompileInputs.cache
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.csproj.CopyComplete
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.exe
+D:\Download\WinFormsApp1\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.pdb
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\haarcascade_frontalface_alt_tree.xml
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\opencv_core220.dll
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\opencv_imgproc220.dll
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\RDNIDlib.dll
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\RDNIDLib.DLX
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\LoxleyOrbit.FaceScan.exe.config
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\LoxleyOrbit.FaceScan.exe
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\LoxleyOrbit.FaceScan.pdb
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\AForge.dll
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\AForge.Video.DirectShow.dll
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\AForge.Video.dll
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\Emgu.CV.dll
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\LoxleyOrbit.FaceScan.Models.dll
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\Newtonsoft.Json.dll
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\ZedGraph.dll
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\LoxleyOrbit.FaceScan.Models.pdb
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\de\ZedGraph.resources.dll
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\es\ZedGraph.resources.dll
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\fr\ZedGraph.resources.dll
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\hu\ZedGraph.resources.dll
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\it\ZedGraph.resources.dll
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\ja\ZedGraph.resources.dll
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\pt\ZedGraph.resources.dll
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\ru\ZedGraph.resources.dll
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\sk\ZedGraph.resources.dll
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\sv\ZedGraph.resources.dll
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\tr\ZedGraph.resources.dll
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\zh-cn\ZedGraph.resources.dll
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\zh-tw\ZedGraph.resources.dll
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\Interop.WMPLib.dll
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\AxInterop.WMPLib.dll
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.csproj.AssemblyReference.cache
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\obj\x86\Debug\Interop.WMPLib.dll
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\obj\x86\Debug\AxInterop.WMPLib.dll
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.csproj.ResolveComReference.cache
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.Form1.resources
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.FormKYC.resources
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.FormPID.resources
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.FormLoading.resources
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.Properties.Resources.resources
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.csproj.GenerateResource.cache
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.csproj.CoreCompileInputs.cache
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.csproj.CopyComplete
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.exe
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.pdb
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\cvextern.dll
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\opencv_videoio_ffmpeg460_64.dll
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\concrt140.dll
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\msvcp140.dll
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\msvcp140_1.dll
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\msvcp140_2.dll
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\msvcp140_atomic_wait.dll
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\msvcp140_codecvt_ids.dll
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\vcruntime140.dll
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\vcruntime140_1.dll
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\Emgu.CV.Bitmap.dll
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\System.Drawing.Common.dll
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\AForge.Imaging.dll
+D:\Download\ALL_KYC\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\AForge.Math.dll
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\haarcascade_frontalface_alt_tree.xml
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\opencv_core220.dll
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\opencv_imgproc220.dll
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\RDNIDlib.dll
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\RDNIDLib.DLX
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\LoxleyOrbit.FaceScan.exe.config
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\LoxleyOrbit.FaceScan.exe
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\LoxleyOrbit.FaceScan.pdb
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\AForge.dll
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\AForge.Imaging.dll
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\AForge.Math.dll
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\AForge.Video.dll
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\AForge.Video.DirectShow.dll
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\Emgu.CV.dll
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\Emgu.CV.Bitmap.dll
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\cvextern.dll
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\opencv_videoio_ffmpeg460_64.dll
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\concrt140.dll
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\msvcp140.dll
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\msvcp140_1.dll
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\msvcp140_2.dll
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\msvcp140_atomic_wait.dll
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\msvcp140_codecvt_ids.dll
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\vcruntime140.dll
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\vcruntime140_1.dll
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\Newtonsoft.Json.dll
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\System.Drawing.Common.dll
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\ZedGraph.dll
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\de\ZedGraph.resources.dll
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\es\ZedGraph.resources.dll
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\fr\ZedGraph.resources.dll
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\hu\ZedGraph.resources.dll
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\it\ZedGraph.resources.dll
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\ja\ZedGraph.resources.dll
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\pt\ZedGraph.resources.dll
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\ru\ZedGraph.resources.dll
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\sk\ZedGraph.resources.dll
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\sv\ZedGraph.resources.dll
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\tr\ZedGraph.resources.dll
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\zh-cn\ZedGraph.resources.dll
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\zh-tw\ZedGraph.resources.dll
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\LoxleyOrbit.FaceScan.Models.dll
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\LoxleyOrbit.FaceScan.Models.pdb
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\Interop.WMPLib.dll
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\bin\x86\Debug\AxInterop.WMPLib.dll
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\obj\x86\Debug\Interop.WMPLib.dll
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\obj\x86\Debug\AxInterop.WMPLib.dll
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.csproj.ResolveComReference.cache
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.eKYCForm.resources
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.Form1.resources
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.FormKYC.resources
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.FormPID.resources
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.FormLoading.resources
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.Properties.Resources.resources
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.csproj.GenerateResource.cache
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.csproj.CoreCompileInputs.cache
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.csproj.CopyComplete
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.exe
+C:\Users\Warinthorn\Downloads\Change-EMGU - Copy2\Change-EMGU - Copy\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.pdb
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\haarcascade_frontalface_alt_tree.xml
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\opencv_core220.dll
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\opencv_imgproc220.dll
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\RDNIDlib.dll
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\RDNIDLib.DLX
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\LoxleyOrbit.FaceScan.exe.config
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\LoxleyOrbit.FaceScan.exe
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\LoxleyOrbit.FaceScan.pdb
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\AForge.dll
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\AForge.Imaging.dll
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\AForge.Math.dll
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\AForge.Video.dll
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\AForge.Video.DirectShow.dll
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\CSCore.dll
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\Emgu.CV.dll
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\Emgu.CV.Bitmap.dll
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\cvextern.dll
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\opencv_videoio_ffmpeg460_64.dll
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\concrt140.dll
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\msvcp140.dll
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\msvcp140_1.dll
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\msvcp140_2.dll
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\msvcp140_atomic_wait.dll
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\msvcp140_codecvt_ids.dll
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\vcruntime140.dll
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\vcruntime140_1.dll
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\Newtonsoft.Json.dll
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\System.Drawing.Common.dll
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\ZedGraph.dll
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\de\ZedGraph.resources.dll
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\es\ZedGraph.resources.dll
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\fr\ZedGraph.resources.dll
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\hu\ZedGraph.resources.dll
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\it\ZedGraph.resources.dll
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\ja\ZedGraph.resources.dll
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\pt\ZedGraph.resources.dll
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\ru\ZedGraph.resources.dll
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\sk\ZedGraph.resources.dll
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\sv\ZedGraph.resources.dll
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\tr\ZedGraph.resources.dll
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\zh-cn\ZedGraph.resources.dll
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\zh-tw\ZedGraph.resources.dll
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\LoxleyOrbit.FaceScan.Models.dll
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\LoxleyOrbit.FaceScan.Models.pdb
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\Interop.WMPLib.dll
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\AxInterop.WMPLib.dll
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.csproj.AssemblyReference.cache
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\obj\x86\Debug\Interop.WMPLib.dll
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\obj\x86\Debug\AxInterop.WMPLib.dll
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.csproj.ResolveComReference.cache
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.eKYCForm.resources
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.Form1.resources
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.FormKYC.resources
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.FormPID.resources
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.FormLoading.resources
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.Properties.Resources.resources
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.csproj.GenerateResource.cache
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.csproj.CoreCompileInputs.cache
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.csproj.CopyComplete
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.exe
+C:\Work\Cuhla\Change-EMGU-V2\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.pdb
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\haarcascade_frontalface_alt_tree.xml
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\opencv_core220.dll
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\opencv_imgproc220.dll
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\RDNIDlib.dll
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\RDNIDLib.DLX
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\LoxleyOrbit.FaceScan.exe.config
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\LoxleyOrbit.FaceScan.exe
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\LoxleyOrbit.FaceScan.pdb
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\AForge.dll
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\AForge.Imaging.dll
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\AForge.Math.dll
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\AForge.Video.dll
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\AForge.Video.DirectShow.dll
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\CSCore.dll
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\Emgu.CV.dll
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\Emgu.CV.Bitmap.dll
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\cvextern.dll
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\opencv_videoio_ffmpeg460_64.dll
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\concrt140.dll
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\msvcp140.dll
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\msvcp140_1.dll
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\msvcp140_2.dll
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\msvcp140_atomic_wait.dll
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\msvcp140_codecvt_ids.dll
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\vcruntime140.dll
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\vcruntime140_1.dll
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\Newtonsoft.Json.dll
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\System.Drawing.Common.dll
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\ZedGraph.dll
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\de\ZedGraph.resources.dll
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\es\ZedGraph.resources.dll
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\fr\ZedGraph.resources.dll
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\hu\ZedGraph.resources.dll
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\it\ZedGraph.resources.dll
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\ja\ZedGraph.resources.dll
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\pt\ZedGraph.resources.dll
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\ru\ZedGraph.resources.dll
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\sk\ZedGraph.resources.dll
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\sv\ZedGraph.resources.dll
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\tr\ZedGraph.resources.dll
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\zh-cn\ZedGraph.resources.dll
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\zh-tw\ZedGraph.resources.dll
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\LoxleyOrbit.FaceScan.Models.dll
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\LoxleyOrbit.FaceScan.Models.pdb
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\Interop.WMPLib.dll
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\bin\x86\Debug\AxInterop.WMPLib.dll
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\obj\x86\Debug\Interop.WMPLib.dll
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\obj\x86\Debug\AxInterop.WMPLib.dll
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.csproj.ResolveComReference.cache
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.eKYCForm.resources
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.Form1.resources
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.FormKYC.resources
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.FormPID.resources
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.FormLoading.resources
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.Properties.Resources.resources
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.csproj.GenerateResource.cache
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.csproj.CoreCompileInputs.cache
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.csproj.CopyComplete
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.exe
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.pdb
+E:\CAMERAPROJECT\Change-EMGU-V2\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.csproj.AssemblyReference.cache
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\bin\x86\Debug\haarcascade_frontalface_alt_tree.xml
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\bin\x86\Debug\opencv_core220.dll
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\bin\x86\Debug\opencv_imgproc220.dll
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\bin\x86\Debug\RDNIDlib.dll
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\bin\x86\Debug\RDNIDLib.DLX
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\bin\x86\Debug\LoxleyOrbit.FaceScan.exe.config
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\bin\x86\Debug\LoxleyOrbit.FaceScan.exe
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\bin\x86\Debug\LoxleyOrbit.FaceScan.pdb
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\bin\x86\Debug\AForge.dll
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\bin\x86\Debug\AForge.Imaging.dll
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\bin\x86\Debug\AForge.Math.dll
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\bin\x86\Debug\AForge.Video.dll
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\bin\x86\Debug\AForge.Video.DirectShow.dll
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\bin\x86\Debug\CSCore.dll
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\bin\x86\Debug\Emgu.CV.dll
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\bin\x86\Debug\Emgu.CV.Bitmap.dll
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\bin\x86\Debug\cvextern.dll
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\bin\x86\Debug\opencv_videoio_ffmpeg460_64.dll
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\bin\x86\Debug\concrt140.dll
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\bin\x86\Debug\msvcp140.dll
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\bin\x86\Debug\msvcp140_1.dll
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\bin\x86\Debug\msvcp140_2.dll
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\bin\x86\Debug\msvcp140_atomic_wait.dll
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\bin\x86\Debug\msvcp140_codecvt_ids.dll
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\bin\x86\Debug\vcruntime140.dll
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\bin\x86\Debug\vcruntime140_1.dll
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\bin\x86\Debug\Newtonsoft.Json.dll
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\bin\x86\Debug\System.Drawing.Common.dll
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\bin\x86\Debug\ZedGraph.dll
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\bin\x86\Debug\de\ZedGraph.resources.dll
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\bin\x86\Debug\es\ZedGraph.resources.dll
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\bin\x86\Debug\fr\ZedGraph.resources.dll
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\bin\x86\Debug\hu\ZedGraph.resources.dll
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\bin\x86\Debug\it\ZedGraph.resources.dll
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\bin\x86\Debug\ja\ZedGraph.resources.dll
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\bin\x86\Debug\pt\ZedGraph.resources.dll
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\bin\x86\Debug\ru\ZedGraph.resources.dll
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\bin\x86\Debug\sk\ZedGraph.resources.dll
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\bin\x86\Debug\sv\ZedGraph.resources.dll
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\bin\x86\Debug\tr\ZedGraph.resources.dll
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\bin\x86\Debug\zh-cn\ZedGraph.resources.dll
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\bin\x86\Debug\zh-tw\ZedGraph.resources.dll
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\bin\x86\Debug\LoxleyOrbit.FaceScan.Models.dll
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\bin\x86\Debug\LoxleyOrbit.FaceScan.Models.pdb
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\bin\x86\Debug\Interop.WMPLib.dll
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\bin\x86\Debug\AxInterop.WMPLib.dll
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.csproj.AssemblyReference.cache
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\obj\x86\Debug\Interop.WMPLib.dll
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\obj\x86\Debug\AxInterop.WMPLib.dll
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.csproj.ResolveComReference.cache
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.eKYCForm.resources
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.Form1.resources
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.FormKYC.resources
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.FormPID.resources
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.FormLoading.resources
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.Properties.Resources.resources
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.csproj.GenerateResource.cache
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.csproj.CoreCompileInputs.cache
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.csproj.CopyComplete
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.exe
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.pdb
+E:\CAMERAPROJECT\Change-EMGU-V3\LoxleyOrbit.FaceScan\obj\x86\Debug\LoxleyOrbit.FaceScan.FaceResult.resources
