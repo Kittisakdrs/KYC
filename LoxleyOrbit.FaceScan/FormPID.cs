@@ -34,47 +34,13 @@ namespace LoxleyOrbit.FaceScan
             InitializeComponent();
             SetBrowserCompatibilityMode();
 
-            string fileName = StartupPath + "\\RDNIDLib.DLD";
-
-            if (System.IO.File.Exists(fileName) == false)
-            {
-                MessageBox.Show("RDNIDLib.DLD not found");
-            }
-
-            System.Version version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
-
-            this.Text = String.Format("Loxley Orbit NID Card Plus C# V{0}.{1}.{2}.{3}", version.Major, version.Minor, version.Build, version.Revision);
-
-            //IntPtr mNIDLibHandle = (IntPtr)0;
-            byte[] _lic = String2Byte(fileName);
-
-            int nres = 0;
-            //nres = RDNIDLib.openNIDLibRD(_lic);                     //for openLib
-
-            //long newlong = (long)mNIDLibHandle;
-
-            if (nres != 0)
-            {
-                String m;
-                m = String.Format("Error: {0} ", nres);
-                MessageBox.Show(m);
-            }
-
-            byte[] Licinfo = new byte[1024];
-
-            //RDNIDLib.getLicenseInfoRD(Licinfo);
-
-            //m_lblDLDInfo.Text = "License Info: " + aByteToString(Licinfo);
-
-            byte[] Softinfo = new byte[1024];
-            //RDNIDLib.getSoftwareInfoRD(Softinfo);
-            //m_lblSoftwareInfo.Text = "RDNIDLib Info: " + aByteToString(Softinfo);
-
-            byte[] ZDLibinfo = new byte[1024];
-
-            ListCardReader();
-
-            //lblStatus.Text = "Status: Ready";
+            string stoptime = Properties.Settings.Default.StopKiosk;
+            stopKiosk = new TimeSpan
+            (
+                Convert.ToInt32(stoptime.Split(':')[0])
+                , Convert.ToInt32(stoptime.Split(':')[1])
+                , 0
+            );
 
             reader = new IDReaderDotNetService("Identiv uTrust 2700 R Smart Card Reader 0", this); //ตัวอ่านบัตรตัวใหม่
             reader.OnCardInserted += new EventHandler(OnCardInserted);
@@ -82,6 +48,7 @@ namespace LoxleyOrbit.FaceScan
             //m_txtID.Text = "1570800044928";
 
             string fullscreen = Properties.Settings.Default.FullScreen.ToString();
+
             if (fullscreen == "Y") //Non Kiosk
             {
                 this.ControlBox = true;
@@ -149,6 +116,111 @@ namespace LoxleyOrbit.FaceScan
             //    Server_down = true;
             //else
             //    Server_down = false;
+        }
+
+        private void OnCardInserted(object sender, EventArgs e)
+        {
+            if (webBrowser.Document == null) return;
+            if (DateTime.Now.TimeOfDay >= stopKiosk)
+                return;
+
+            this.Enabled = false;
+
+            // web show progress
+            this.Invoke(new MethodInvoker(delegate ()
+            {
+                object result = webBrowser.Document.InvokeScript("open_progress"); // second parameter is jsonString
+            }));
+
+            Application.DoEvents();
+            System.Threading.Thread.Sleep(200);
+            reader = new IDReaderDotNetService("Identiv uTrust 2700 R Smart Card Reader 0", this);
+            DataTable table = reader.ReadData(false);
+
+            if (table != null)
+            {
+                string id = table.Rows[0]["NationalID"].ToString().Trim();
+                string name = table.Rows[0]["ThaiTitleName"].ToString().Trim() + " "
+                    + table.Rows[0]["ThaiFirstName"].ToString().Trim() + " " + table.Rows[0]["ThaiLastName"].ToString().Trim();
+                string p_name = table.Rows[0]["ThaiTitleName"].ToString().Trim();
+                string l_name = table.Rows[0]["ThaiLastName"].ToString().Trim();
+                string f_name = table.Rows[0]["ThaiFirstName"].ToString().Trim();
+
+                string e_p_name = table.Rows[0]["EnglishTitleName"].ToString().Trim();
+                string e_l_name = table.Rows[0]["EnglishLastName"].ToString().Trim();
+                string e_f_name = table.Rows[0]["EnglishFirstName"].ToString().Trim();
+                string e_m_name = table.Rows[0]["EnglishMiddleName"].ToString().Trim();
+
+                string BirthDate = table.Rows[0]["BirthDate"].ToString().Trim();
+
+                // BirthDate = "24930000";
+                if (BirthDate != "")
+                {
+                    BirthDate = BirthDate.Substring(6, 2) + "/" + BirthDate.Substring(4, 2) + "/" + BirthDate.Substring(0, 4);
+                }
+
+                string Sex = table.Rows[0]["Sex"].ToString().Trim();
+                string Address = table.Rows[0]["Address"].ToString().Trim();
+                string Moo = table.Rows[0]["Moo"].ToString().Trim();
+                string Soi = table.Rows[0]["Soi"].ToString().Trim();
+                string Thanon = table.Rows[0]["Thanon"].ToString().Trim();
+                string Tumbol = table.Rows[0]["Tumbol"].ToString().Trim();
+                string Amphur = table.Rows[0]["Amphur"].ToString().Trim();
+                string Province = table.Rows[0]["Province"].ToString().Trim();
+                string ExpireDate = table.Rows[0]["ExpireDate"].ToString().Trim();
+                string IssueDate = table.Rows[0]["IssueDate"].ToString().Trim();
+
+                if (ExpireDate != "")
+                {
+                    //   ExpireDate = "99999999";
+                    ExpireDate = ExpireDate.Substring(6, 2) + "/" + ExpireDate.Substring(4, 2) + "/" + ExpireDate.Substring(0, 4);
+                }
+
+
+                if (IssueDate != "")
+                {
+                    IssueDate = IssueDate.Substring(6, 2) + "/" + IssueDate.Substring(4, 2) + "/" + IssueDate.Substring(0, 4);
+                }
+
+                // forward data to url
+                string param = "?id=" + id +
+                    "&com_name=" + "" + "&name=" + name
+                    + "&BirthDate=" + BirthDate
+                    + "&Sex=" + Sex
+                    + "&Address=" + Address
+                    + "&Moo=" + Moo
+                    + "&Soi=" + Soi
+                    + "&Thanon=" + Thanon
+                    + "&Tumbol=" + Tumbol
+                    + "&Amphur=" + Amphur
+                    + "&Province=" + Province
+                    + "&ExpireDate=" + ExpireDate
+                    + "&IssueDate=" + IssueDate
+                    + "&p_name=" + p_name
+                    + "&f_name=" + f_name
+                    + "&l_name=" + l_name
+                    + "&e_p_name=" + e_p_name
+                    + "&e_f_name=" + e_f_name
+                    + "&e_m_name=" + e_m_name
+                    + "&e_l_name=" + e_l_name;
+
+                to_complete(param);
+                //printSlip(cus_name);
+            }
+            else
+            {
+                // web hide progress
+                this.Invoke(new MethodInvoker(delegate ()
+                {
+                    //object result = webBrowser.Document.InvokeScript("close_popup", new string[] { "#progress" }); // second parameter is jsonString
+                    //object result2 = webBrowser.Document.InvokeScript("show_alert"); // second parameter is jsonString
+                    object result = webBrowser.Document.InvokeScript("to_notsuccess"); // second parameter is jsonString
+                }));
+            }
+
+            Application.DoEvents();
+            this.Enabled = true;
+
         }
 
         private void FormPID_Load(object sender, EventArgs e)
@@ -274,8 +346,110 @@ namespace LoxleyOrbit.FaceScan
             }));
         }
 
-        protected int ReadCard()
+        TimeSpan stopKiosk;
+        protected void ReadCard()
         {
+            if (webBrowser.Document == null) return;
+            if (DateTime.Now.TimeOfDay >= stopKiosk)
+                return;
+
+            this.Enabled = false;
+
+            // web show progress
+            this.Invoke(new MethodInvoker(delegate ()
+            {
+                object result = webBrowser.Document.InvokeScript("open_progress"); // second parameter is jsonString
+            }));
+
+            Application.DoEvents();
+            System.Threading.Thread.Sleep(200);
+            reader = new IDReaderDotNetService("Identiv uTrust 2700 R Smart Card Reader 0", this);
+            DataTable table = reader.ReadData(false);
+
+            if (table != null)
+            {
+                string id = table.Rows[0]["NationalID"].ToString().Trim();
+                string name = table.Rows[0]["ThaiTitleName"].ToString().Trim() + " "
+                    + table.Rows[0]["ThaiFirstName"].ToString().Trim() + " " + table.Rows[0]["ThaiLastName"].ToString().Trim();
+                string p_name = table.Rows[0]["ThaiTitleName"].ToString().Trim();
+                string l_name = table.Rows[0]["ThaiLastName"].ToString().Trim();
+                string f_name = table.Rows[0]["ThaiFirstName"].ToString().Trim();
+
+                string e_p_name = table.Rows[0]["EnglishTitleName"].ToString().Trim();
+                string e_l_name = table.Rows[0]["EnglishLastName"].ToString().Trim();
+                string e_f_name = table.Rows[0]["EnglishFirstName"].ToString().Trim();
+                string e_m_name = table.Rows[0]["EnglishMiddleName"].ToString().Trim();
+
+                string BirthDate = table.Rows[0]["BirthDate"].ToString().Trim();
+
+                // BirthDate = "24930000";
+                if (BirthDate != "")
+                {
+                    BirthDate = BirthDate.Substring(6, 2) + "/" + BirthDate.Substring(4, 2) + "/" + BirthDate.Substring(0, 4);
+                }
+
+                string Sex = table.Rows[0]["Sex"].ToString().Trim();
+                string Address = table.Rows[0]["Address"].ToString().Trim();
+                string Moo = table.Rows[0]["Moo"].ToString().Trim();
+                string Soi = table.Rows[0]["Soi"].ToString().Trim();
+                string Thanon = table.Rows[0]["Thanon"].ToString().Trim();
+                string Tumbol = table.Rows[0]["Tumbol"].ToString().Trim();
+                string Amphur = table.Rows[0]["Amphur"].ToString().Trim();
+                string Province = table.Rows[0]["Province"].ToString().Trim();
+                string ExpireDate = table.Rows[0]["ExpireDate"].ToString().Trim();
+                string IssueDate = table.Rows[0]["IssueDate"].ToString().Trim();
+
+                if (ExpireDate != "")
+                {
+                    //   ExpireDate = "99999999";
+                    ExpireDate = ExpireDate.Substring(6, 2) + "/" + ExpireDate.Substring(4, 2) + "/" + ExpireDate.Substring(0, 4);
+                }
+
+
+                if (IssueDate != "")
+                {
+                    IssueDate = IssueDate.Substring(6, 2) + "/" + IssueDate.Substring(4, 2) + "/" + IssueDate.Substring(0, 4);
+                }
+
+                m_txtID.Text = id;
+                // forward data to url
+                string param = "?id=" + id
+                    + "&com_name=" + "" + "&name=" + name
+                    + "&BirthDate=" + BirthDate
+                    + "&Sex=" + Sex
+                    + "&Address=" + Address
+                    + "&Moo=" + Moo
+                    + "&Soi=" + Soi
+                    + "&Thanon=" + Thanon
+                    + "&Tumbol=" + Tumbol
+                    + "&Amphur=" + Amphur
+                    + "&Province=" + Province
+                    + "&ExpireDate=" + ExpireDate
+                    + "&IssueDate=" + IssueDate
+                    + "&p_name=" + p_name
+                    + "&f_name=" + f_name
+                    + "&l_name=" + l_name
+                    + "&e_p_name=" + e_p_name
+                    + "&e_f_name=" + e_f_name
+                    + "&e_m_name=" + e_m_name
+                    + "&e_l_name=" + e_l_name;
+
+                //to_complete(param);
+                LaunchCamera("");
+                //printSlip(cus_name);
+            }
+            else
+            {
+                // web hide progress
+                this.Invoke(new MethodInvoker(delegate ()
+                {
+                    //object result = webBrowser.Document.InvokeScript("close_popup", new string[] { "#progress" }); // second parameter is jsonString
+                    //object result2 = webBrowser.Document.InvokeScript("show_alert"); // second parameter is jsonString
+                    object result = webBrowser.Document.InvokeScript("redirect_to_User_Hn"); // second parameter is jsonString
+                }));
+            }
+
+            #region
             //speedReadAll = new Stopwatch();
             //speedReadText = new Stopwatch();
 
@@ -484,31 +658,32 @@ namespace LoxleyOrbit.FaceScan
 
             //RDNIDLib.disconnectCardRD(obj);
             //RDNIDLib.deselectReaderRD(obj);
+            #endregion
 
-            //try
-            //{
-            //    this.Invoke(new MethodInvoker(delegate ()
-            //    {
-            //        object result = webBrowser.Document.InvokeScript("close_popup"); // second parameter is jsonString
-            //    }));
-            //}
-            //catch { };
+            try
+            {
+                this.Invoke(new MethodInvoker(delegate ()
+                {
+                    object result = webBrowser.Document.InvokeScript("close_popup"); // second parameter is jsonString
+                }));
+            }
+            catch { };
 
-            return 0;
+            return;
         }
 
-        private void OnCardInserted(object sender, EventArgs e)
-        {
-            this.Enabled = false;
-            Application.DoEvents();
-            System.Threading.Thread.Sleep(200);
-            reader = new IDReaderDotNetService("Identiv uTrust 2700 R Smart Card Reader 0", this);
+        //private void OnCardInserted(object sender, EventArgs e)
+        //{
+        //    //this.Enabled = false;
+        //    //Application.DoEvents();
+        //    //System.Threading.Thread.Sleep(200);
+        //    //reader = new IDReaderDotNetService("Identiv uTrust 2700 R Smart Card Reader 0", this);
 
-            btnReadcard_Click(null, null);
+        //    btnReadcard_Click(null, null);
 
-            Application.DoEvents();
-            this.Enabled = true;
-        }
+        //    Application.DoEvents();
+        //    this.Enabled = true;
+        //}
 
         public int selectReader(String reader)
         {

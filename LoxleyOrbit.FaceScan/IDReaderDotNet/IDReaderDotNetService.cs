@@ -59,7 +59,7 @@ namespace KioskQexe.IDReaderDotNet
                 try
                 {
                     IntPtr hCard = SCardWrapper.Connect(readerName);
-                    Thread.Sleep(10);
+                    Thread.Sleep(5);
                     ThaiNidCard thaiNidCard = new ThaiNidCard(hCard);
                     if (thaiNidCard.Select())
                     {
@@ -91,12 +91,12 @@ namespace KioskQexe.IDReaderDotNet
 
         private bool GetReaderStatus(string readerName)
         {
-            //SCardState statusChange = SCardWrapper.GetStatusChange(readerName, 0, SCardState.SCARD_STATE_UNAWARE);
-            //if ((statusChange & SCardState.SCARD_STATE_PRESENT) == SCardState.SCARD_STATE_PRESENT)
-            //{
-            return true;
-            //}
-            //return false;
+            SCardState statusChange = SCardWrapper.GetStatusChange(readerName, 0, SCardState.SCARD_STATE_UNAWARE);
+            if ((statusChange & SCardState.SCARD_STATE_PRESENT) == SCardState.SCARD_STATE_PRESENT)
+            {
+                return true;
+            }
+            return false;
         }
         public static string[] GetReaderLists()
         {
@@ -157,13 +157,11 @@ namespace KioskQexe.IDReaderDotNet
             bool readerStatus = GetReaderStatus(readerName);
             if (!lastState && readerStatus)
             {
-                //fasle และ true ให้อ่าน Card
                 lastState = true;
                 raise_OnCardInserted();
             }
             if (lastState && !readerStatus)
             {
-                //true และ fasle ถอดการ์ด
                 lastState = false;
                 raise_OnCardRemoved();
                 GC.Collect();
