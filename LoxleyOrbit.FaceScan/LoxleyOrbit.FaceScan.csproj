@@ -223,6 +223,7 @@
     <None Include="bin\x86\Debug\Images\DashWhite.png" />
     <Content Include="Audio\Audio1.wav" />
     <Content Include="Audio\Audio2.wav" />
+    <Content Include="Audio\Audio4.wav" />
     <Content Include="haarcascade_frontalface_alt_tree.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

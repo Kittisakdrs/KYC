@@ -32,6 +32,7 @@ namespace LoxleyOrbit.FaceScan
     {
         private readonly string msg_near = "กรุณาขยับเข้าหากล้องเพื่อสแกนใบหน้า";
         private readonly string msg_far = "กรุณาถอยห่างจากกล้องเพื่อสแกนใบหน้า";
+        private readonly string msg_adjust = "กรุณายืนห่างประมาณ 40-60 เซนติเมตร";
         private readonly string msg_fit = "กรุณาอย่าขยับเพื่อสแกนใบหน้า";
         private readonly string msg_center = "กรุณาอยู่ตรงกลาง";
         private readonly string mgs_remark = "(วางใบหน้าบนกรอบที่กำหนด ไม่ปิดคิ้วตาจมูก ปากและคาง)";
@@ -77,6 +78,7 @@ namespace LoxleyOrbit.FaceScan
         static string audio1 = @"Audio\Audio1.wav";
         static string audio2 = @"Audio\Audio2.wav";
         static string audio3 = @"Audio\Audio3.wav";
+        static string audio4 = @"Audio\Audio4.wav";
         private DateTime dateTimeStart = DateTime.Now;
         private double totalMilliseconds = 0;
         private int lasttimeOut = 0;
@@ -173,6 +175,7 @@ namespace LoxleyOrbit.FaceScan
             // Listen for the SoundLocationChanged event.
             player.SoundLocationChanged += new EventHandler(player_LocationChanged);
         }
+
         private void FormKYC_Load(object sender, EventArgs e)
         {
             selected = comboBox1.SelectedIndex;
@@ -205,6 +208,18 @@ namespace LoxleyOrbit.FaceScan
             lb_remark.Visible = false;
             lb_remark.Location = new Point() { X = (this.Width / 2) - (lb_remark.Width / 2), Y = y - 100 };
             lb_remark.Text = mgs_remark;
+
+
+            #region result_panel
+            Label Lhead = result_panel.Controls["Head"] as Label;
+            Label Ldesc = result_panel.Controls["desc"] as Label;
+            PictureBox Pbox = result_panel.Controls["pictureBox"] as PictureBox;
+            Button B2 = result_panel.Controls["button2"] as Button;
+            Button B3 = result_panel.Controls["button3"] as Button;
+
+            result_panel.Visible = false;
+            #endregion
+
 
             #region comment
             //webBrowser1.Navigate(new Uri("https://test-kiosk.chulacareapp.com/onemlweb/FaceScan.aspx"));
@@ -483,7 +498,7 @@ namespace LoxleyOrbit.FaceScan
             }
             else
             {
-
+                SetResultBox(true);
                 SetPictureBox3(false);
                 ////SetPictureBox4(false);
                 CloseFrom("ต้องการทำการ eKYC ใหม่หรือไม่?", "แจ้งเตือน");
@@ -647,9 +662,25 @@ namespace LoxleyOrbit.FaceScan
                         using (Pen pen = new Pen(Color.Red, 3))
                         {
                             graphics.DrawRectangle(pen, rectangle);
+                            //int x1 = 0;//กรอบใน
+                            //int x3 = 0;//กรอบนอก
 
-                            if ((rectangle.Location.X >= x3 && rectangle.Location.X <= x1) && (rectangle.Location.Y >= y3 && rectangle.Location.Y <= y1)
-                               && rectangle.Size.Width >= 0 && rectangle.Size.Height >= 0)
+                            //int y1 = 0;//กรอบใน
+                            //int y3 = 0;//กรอบนอก
+
+                            //int sizeX1 = 210;//กรอบนอก
+                            //int sizeX3 = 400;//กรอบนอก
+
+                            if ((
+                                rectangle.Location.X >= x3 &&  //จุดซ้ายบนของกรอบแดงต้องมากกว่ากรอบนอก
+                                rectangle.Location.X <= x1
+                                ) && (
+                                rectangle.Location.Y >= y3 &&
+                                rectangle.Location.Y <= y1
+                                ) &&
+                                rectangle.Size.Width >= 0  &&
+                                rectangle.Size.Height >= 0
+                                )
                             {
                                 Setlb_txt(msg_fit);
                                 this.lb_txt.BackColor = Color.Green;
@@ -657,7 +688,7 @@ namespace LoxleyOrbit.FaceScan
                                 //SetTimerClearText(true);
                                 //SetPictureBoxLeft(false);
                                 //SetPictureBoxRight(false);
-                                FaceDetection();
+                                //FaceDetection();
                             }
                             else if (rectangle.Location.X < (x3 - 100))//|| rectangle.Location.X > (x3 + sizeX1))
                             {
@@ -666,6 +697,7 @@ namespace LoxleyOrbit.FaceScan
                                 PlayAudio(audio2, 6500);
                                 //SetPictureBoxLeft(true);
                                 //SetTimerClearText(true);
+                                Console.WriteLine("Left " + rectangle.Location.X);
                             }
                             else if (rectangle.Location.X < (x3 + 600))
                             {
@@ -674,36 +706,39 @@ namespace LoxleyOrbit.FaceScan
                                 PlayAudio(audio2, 6500);
                                 //SetPictureBoxRight(true);
                                 //SetTimerClearText(true);
+                                Console.WriteLine("Right " + rectangle.Location.X);
                             }
                             else if (rectangle.Width <= sizeX3)
                             {
                                 Setlb_txt(msg_near);//ไกลเกินไป
                                 this.lb_txt.BackColor = Color.Red;
-                                PlayAudio(audio2, 6500);
+                                PlayAudio(audio4, 6500);
                                 //SetTimerClearText(true);
+                                Console.WriteLine("Too far " + rectangle.Width);
                             }
                             else if (rectangle.Width >= sizeX1)
                             {
                                 Setlb_txt(msg_far);//ใกล้เกินไป
                                 this.lb_txt.BackColor = Color.Red;
-                                PlayAudio(audio2, 6500);
+                                PlayAudio(audio4, 6500);
                                 //SetTimerClearText(true);
+                                Console.WriteLine("Too close " + rectangle.Width);
                             }
                         }
                     }
                 }
             }
             #region comment
-            //using (Graphics g = Graphics.FromImage(baseImage))
-            //{
-            //    //g.DrawImage(overlayImage, new Rectangle(new Point(0, 0), new Size(baseImage.Width, baseImage.Height)));
+            using (Graphics g = Graphics.FromImage(baseImage))
+            {
+                //g.DrawImage(overlayImage, new Rectangle(new Point(0, 0), new Size(baseImage.Width, baseImage.Height)));
 
-            //    //g.DrawRectangle(new Pen(Color.Yellow, 3), new Rectangle(new Point(x1, y1), new Size(380, 380))); //กรอบใน
-            //    //g.DrawRectangle(new Pen(Color.Blue, 3), new Rectangle(new Point(x3, y3), new Size(600, 620)));//กรอบนอก
+                g.DrawRectangle(new Pen(Color.Yellow, 3), new Rectangle(new Point(x1, y1), new Size(380, 380))); //กรอบใน
+                g.DrawRectangle(new Pen(Color.Blue, 3), new Rectangle(new Point(x3, y3), new Size(600, 620)));//กรอบนอก
 
-            //    //g.DrawRectangle(new Pen(Color.White, 3), new Rectangle(new Point(desiredWidth / 2, 1), new Size(1, desiredHeight)));
-            //    //g.DrawRectangle(new Pen(Color.White, 3), new Rectangle(new Point(1, desiredHeight / 2), new Size(desiredWidth, 1)));
-            //}
+                g.DrawRectangle(new Pen(Color.White, 3), new Rectangle(new Point(desiredWidth / 2, 1), new Size(1, desiredHeight)));
+                g.DrawRectangle(new Pen(Color.White, 3), new Rectangle(new Point(1, desiredHeight / 2), new Size(desiredWidth, 1)));
+            }
 
             //hid_canv.Image = baseImage;
             #endregion
@@ -742,6 +777,7 @@ namespace LoxleyOrbit.FaceScan
         delegate void SetPictureBoxLeftCallback(bool c);
         delegate void SetPictureBoxRightCallback(bool c);
         delegate void SetOverlayBoxCallback(bool c);
+        delegate void SetResultBoxCallback(bool c);
         private void SetVideoSource(VideoCaptureDevice c)
         {
             if (this.loading_box.InvokeRequired)
@@ -820,6 +856,24 @@ namespace LoxleyOrbit.FaceScan
                 this.Overlay_box.Visible = c;
             }
         }
+
+        private void SetResultBox(bool c)
+        {
+            // InvokeRequired required compares the thread ID of the
+            // calling thread to the thread ID of the creating thread.
+            // If these threads are different, it returns true.
+            if (this.result_panel.InvokeRequired)
+            {
+                SetResultBoxCallback d = new SetResultBoxCallback(SetResultBox);
+                this.Invoke(d, new object[] { c });
+            }
+            else
+            {
+                this.result_panel.Visible = c;
+            }
+        }
+
+
 
         //private void SetPictureBoxLeft(bool c)
         //{
@@ -916,7 +970,7 @@ namespace LoxleyOrbit.FaceScan
 
         private void button2_Click(object sender, EventArgs e)
         {
-           
+
         }
     }
 }

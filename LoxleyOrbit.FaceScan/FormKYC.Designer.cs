@@ -51,11 +51,11 @@ namespace LoxleyOrbit.FaceScan
             this.Overlay_box = new System.Windows.Forms.PictureBox();
             this.Cam_pic = new System.Windows.Forms.PictureBox();
             this.result_panel = new System.Windows.Forms.Panel();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.Desc = new System.Windows.Forms.Label();
+            this.Head = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.pictureBox = new System.Windows.Forms.PictureBox();
-            this.desc = new System.Windows.Forms.Label();
-            this.Head = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.loading_box)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Overlay_box)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Cam_pic)).BeginInit();
@@ -261,8 +261,9 @@ namespace LoxleyOrbit.FaceScan
             // 
             // result_panel
             // 
+            this.result_panel.BackColor = System.Drawing.Color.White;
             this.result_panel.Controls.Add(this.pictureBox);
-            this.result_panel.Controls.Add(this.desc);
+            this.result_panel.Controls.Add(this.Desc);
             this.result_panel.Controls.Add(this.Head);
             this.result_panel.Controls.Add(this.button2);
             this.result_panel.Controls.Add(this.button3);
@@ -271,58 +272,60 @@ namespace LoxleyOrbit.FaceScan
             this.result_panel.Size = new System.Drawing.Size(800, 450);
             this.result_panel.TabIndex = 141;
             // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.button2.Location = new System.Drawing.Point(477, 357);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(320, 90);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.button3.Location = new System.Drawing.Point(3, 357);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(320, 90);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "b1";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
             // pictureBox
             // 
             this.pictureBox.Image = global::LoxleyOrbit.FaceScan.Properties.Resources.Screenshot_2023_05_01_115107;
-            this.pictureBox.Location = new System.Drawing.Point(261, 122);
+            this.pictureBox.Location = new System.Drawing.Point(254, 92);
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.Size = new System.Drawing.Size(290, 162);
             this.pictureBox.TabIndex = 9;
             this.pictureBox.TabStop = false;
             // 
-            // desc
+            // Desc
             // 
-            this.desc.AutoSize = true;
-            this.desc.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.desc.ForeColor = System.Drawing.Color.MediumBlue;
-            this.desc.Location = new System.Drawing.Point(365, 309);
-            this.desc.Name = "desc";
-            this.desc.Size = new System.Drawing.Size(70, 25);
-            this.desc.TabIndex = 8;
-            this.desc.Text = "label2";
+            this.Desc.AutoSize = true;
+            this.Desc.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.Desc.ForeColor = System.Drawing.Color.MediumBlue;
+            this.Desc.Location = new System.Drawing.Point(366, 281);
+            this.Desc.Name = "Desc";
+            this.Desc.Size = new System.Drawing.Size(320, 25);
+            this.Desc.TabIndex = 8;
+            this.Desc.Text = "ต้องการสแกนใบหน้าใหม่อีกครั้งหรือไม่";
             // 
             // Head
             // 
             this.Head.AutoSize = true;
             this.Head.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.Head.ForeColor = System.Drawing.Color.Red;
-            this.Head.Location = new System.Drawing.Point(344, 43);
+            this.Head.Location = new System.Drawing.Point(209, 33);
             this.Head.Name = "Head";
-            this.Head.Size = new System.Drawing.Size(118, 42);
+            this.Head.Size = new System.Drawing.Size(389, 42);
             this.Head.TabIndex = 7;
-            this.Head.Text = "label3";
+            this.Head.Text = "คุณไม่ผ่านการยืนยันตัวตน";
             this.Head.UseMnemonic = false;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.button2.Location = new System.Drawing.Point(15, 345);
+            this.button2.Margin = new System.Windows.Forms.Padding(15);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(320, 90);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "สแกนซ้ำ";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.button3.Location = new System.Drawing.Point(465, 345);
+            this.button3.Margin = new System.Windows.Forms.Padding(15);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(320, 90);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "ยกเลิกการทำรายการ";
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // FormKYC
             // 
@@ -389,7 +392,7 @@ namespace LoxleyOrbit.FaceScan
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.PictureBox pictureBox;
-        private System.Windows.Forms.Label desc;
+        private System.Windows.Forms.Label Desc;
         private System.Windows.Forms.Label Head;
     }
 }
