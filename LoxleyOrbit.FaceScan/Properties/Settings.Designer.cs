@@ -31,5 +31,14 @@ namespace LoxleyOrbit.FaceScan.Properties {
                 return ((string)(this["FullScreen"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("23:15")]
+        public string StopKiosk {
+            get {
+                return ((string)(this["StopKiosk"]));
+            }
+        }
     }
 }

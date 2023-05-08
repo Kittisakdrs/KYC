@@ -91,12 +91,12 @@ namespace KioskQexe.IDReaderDotNet
 
         private bool GetReaderStatus(string readerName)
         {
-            SCardState statusChange = SCardWrapper.GetStatusChange(readerName, 0, SCardState.SCARD_STATE_UNAWARE);
-            if ((statusChange & SCardState.SCARD_STATE_PRESENT) == SCardState.SCARD_STATE_PRESENT)
-            {
+            //SCardState statusChange = SCardWrapper.GetStatusChange(readerName, 0, SCardState.SCARD_STATE_UNAWARE);
+            //if ((statusChange & SCardState.SCARD_STATE_PRESENT) == SCardState.SCARD_STATE_PRESENT)
+            //{
                 return true;
-            }
-            return false;
+            //}
+            //return false;
         }
         public static string[] GetReaderLists()
         {

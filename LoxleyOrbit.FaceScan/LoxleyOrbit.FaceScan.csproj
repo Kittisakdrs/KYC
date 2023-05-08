@@ -168,6 +168,11 @@
     <Compile Include="Models\FaceModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="RDNIDWRAPPER.cs" />
     <EmbeddedResource Include="eKYCForm.resx">
       <DependentUpon>eKYCForm.cs</DependentUpon>
@@ -189,14 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -214,6 +214,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\button_ok.png" />
+    <None Include="Resources\Load_Clock1.gif" />
+    <None Include="Resources\button_ok1.png" />
+    <None Include="Resources\bg1920_success.png" />
+    <None Include="Resources\bg1920_fail.png" />
+    <None Include="Resources\Check.gif" />
+    <None Include="Resources\bg1920.png" />
     <None Include="Resources\Screenshot 2023-05-01 115107.png" />
     <None Include="Resources\Load_Clock.gif" />
     <None Include="Resources\Reveal2.gif" />
@@ -229,6 +236,9 @@
     </Content>
     <Content Include="Images\arrow_L.gif" />
     <Content Include="Images\arrow_r3.gif" />
+    <Content Include="Images\bg1920_fail.png" />
+    <Content Include="Images\bg1920_success.png" />
+    <Content Include="Images\Check.gif" />
     <Content Include="Images\complete.PNG" />
     <Content Include="Images\DashWhite.png" />
     <Content Include="Images\face-detect-set\face\0.jpg" />
@@ -253,8 +263,8 @@
     <Content Include="Images\loading.gif" />
     <Content Include="Images\overlay.png" />
     <Content Include="Images\PureBlack.png" />
-    <Content Include="Images\Reveal2.gif" />
     <Content Include="Images\screenbg.png" />
+    <Content Include="Images\screenbg1366.png" />
     <Content Include="opencv_core220.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

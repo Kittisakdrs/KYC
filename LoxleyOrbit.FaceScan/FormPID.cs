@@ -35,6 +35,7 @@ namespace LoxleyOrbit.FaceScan
             SetBrowserCompatibilityMode();
 
             string stoptime = Properties.Settings.Default.StopKiosk;
+            //string stoptime = "120";
             stopKiosk = new TimeSpan
             (
                 Convert.ToInt32(stoptime.Split(':')[0])

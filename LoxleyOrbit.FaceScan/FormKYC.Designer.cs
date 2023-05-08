@@ -47,20 +47,29 @@ namespace LoxleyOrbit.FaceScan
             this.timerClearText = new System.Windows.Forms.Timer(this.components);
             this.TimerClearAudio = new System.Windows.Forms.Timer(this.components);
             this.txt_log = new System.Windows.Forms.ListBox();
-            this.loading_box = new System.Windows.Forms.PictureBox();
-            this.Overlay_box = new System.Windows.Forms.PictureBox();
-            this.Cam_pic = new System.Windows.Forms.PictureBox();
             this.result_panel = new System.Windows.Forms.Panel();
-            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.Desc = new System.Windows.Forms.Label();
             this.Head = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.pnl_no_retry = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.loading_box = new System.Windows.Forms.PictureBox();
+            this.Overlay_box = new System.Windows.Forms.PictureBox();
+            this.Cam_pic = new System.Windows.Forms.PictureBox();
+            this.result_panel.SuspendLayout();
+            this.pnl_no_retry.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loading_box)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Overlay_box)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Cam_pic)).BeginInit();
-            this.result_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -148,7 +157,7 @@ namespace LoxleyOrbit.FaceScan
             this.lb_remark.AutoSize = true;
             this.lb_remark.BackColor = System.Drawing.SystemColors.Highlight;
             this.lb_remark.Font = new System.Drawing.Font("Microsoft Sans Serif", 42.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lb_remark.Location = new System.Drawing.Point(37, 846);
+            this.lb_remark.Location = new System.Drawing.Point(499, 845);
             this.lb_remark.Name = "lb_remark";
             this.lb_remark.Size = new System.Drawing.Size(457, 65);
             this.lb_remark.TabIndex = 129;
@@ -227,38 +236,6 @@ namespace LoxleyOrbit.FaceScan
             this.txt_log.TabIndex = 137;
             this.txt_log.Visible = false;
             // 
-            // loading_box
-            // 
-            this.loading_box.BackColor = System.Drawing.Color.Transparent;
-            this.loading_box.Image = global::LoxleyOrbit.FaceScan.Properties.Resources.Load_Clock;
-            this.loading_box.Location = new System.Drawing.Point(1184, 128);
-            this.loading_box.Name = "loading_box";
-            this.loading_box.Size = new System.Drawing.Size(600, 600);
-            this.loading_box.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.loading_box.TabIndex = 131;
-            this.loading_box.TabStop = false;
-            this.loading_box.WaitOnLoad = true;
-            // 
-            // Overlay_box
-            // 
-            this.Overlay_box.Location = new System.Drawing.Point(1573, 892);
-            this.Overlay_box.Name = "Overlay_box";
-            this.Overlay_box.Size = new System.Drawing.Size(1366, 768);
-            this.Overlay_box.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Overlay_box.TabIndex = 132;
-            this.Overlay_box.TabStop = false;
-            // 
-            // Cam_pic
-            // 
-            this.Cam_pic.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Cam_pic.Location = new System.Drawing.Point(1589, 951);
-            this.Cam_pic.Margin = new System.Windows.Forms.Padding(2);
-            this.Cam_pic.Name = "Cam_pic";
-            this.Cam_pic.Size = new System.Drawing.Size(1920, 1080);
-            this.Cam_pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Cam_pic.TabIndex = 126;
-            this.Cam_pic.TabStop = false;
-            // 
             // result_panel
             // 
             this.result_panel.BackColor = System.Drawing.Color.White;
@@ -272,53 +249,48 @@ namespace LoxleyOrbit.FaceScan
             this.result_panel.Size = new System.Drawing.Size(800, 450);
             this.result_panel.TabIndex = 141;
             // 
-            // pictureBox
-            // 
-            this.pictureBox.Image = global::LoxleyOrbit.FaceScan.Properties.Resources.Screenshot_2023_05_01_115107;
-            this.pictureBox.Location = new System.Drawing.Point(254, 92);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(290, 162);
-            this.pictureBox.TabIndex = 9;
-            this.pictureBox.TabStop = false;
-            // 
             // Desc
             // 
             this.Desc.AutoSize = true;
-            this.Desc.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.Desc.Font = new System.Drawing.Font("Angsana New", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.Desc.ForeColor = System.Drawing.Color.MediumBlue;
-            this.Desc.Location = new System.Drawing.Point(366, 281);
+            this.Desc.Location = new System.Drawing.Point(177, 278);
             this.Desc.Name = "Desc";
-            this.Desc.Size = new System.Drawing.Size(320, 25);
+            this.Desc.Size = new System.Drawing.Size(398, 47);
             this.Desc.TabIndex = 8;
             this.Desc.Text = "ต้องการสแกนใบหน้าใหม่อีกครั้งหรือไม่";
             // 
             // Head
             // 
             this.Head.AutoSize = true;
-            this.Head.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.Head.Font = new System.Drawing.Font("Angsana New", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.Head.ForeColor = System.Drawing.Color.Red;
-            this.Head.Location = new System.Drawing.Point(209, 33);
+            this.Head.Location = new System.Drawing.Point(211, 23);
             this.Head.Name = "Head";
-            this.Head.Size = new System.Drawing.Size(389, 42);
+            this.Head.Size = new System.Drawing.Size(372, 66);
             this.Head.TabIndex = 7;
             this.Head.Text = "คุณไม่ผ่านการยืนยันตัวตน";
             this.Head.UseMnemonic = false;
             // 
             // button2
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.button2.BackColor = System.Drawing.Color.Pink;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Font = new System.Drawing.Font("Angsana New", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.button2.Location = new System.Drawing.Point(15, 345);
             this.button2.Margin = new System.Windows.Forms.Padding(15);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(320, 90);
             this.button2.TabIndex = 6;
             this.button2.Text = "สแกนซ้ำ";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.button3.BackColor = System.Drawing.Color.Salmon;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button3.Font = new System.Drawing.Font("Angsana New", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.button3.Location = new System.Drawing.Point(465, 345);
             this.button3.Margin = new System.Windows.Forms.Padding(15);
             this.button3.Name = "button3";
@@ -326,12 +298,122 @@ namespace LoxleyOrbit.FaceScan
             this.button3.TabIndex = 5;
             this.button3.Text = "ยกเลิกการทำรายการ";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(44, 128);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 142;
+            this.button4.Text = "button4";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(44, 176);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 143;
+            this.button5.Text = "button5";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(48, 219);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 144;
+            this.button6.Text = "button6";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // pnl_no_retry
+            // 
+            this.pnl_no_retry.BackColor = System.Drawing.Color.Transparent;
+            this.pnl_no_retry.Controls.Add(this.pictureBox2);
+            this.pnl_no_retry.Controls.Add(this.pictureBox1);
+            this.pnl_no_retry.Location = new System.Drawing.Point(1646, 12);
+            this.pnl_no_retry.Name = "pnl_no_retry";
+            this.pnl_no_retry.Size = new System.Drawing.Size(262, 187);
+            this.pnl_no_retry.TabIndex = 145;
+            this.pnl_no_retry.Visible = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Location = new System.Drawing.Point(137, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(125, 187);
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(131, 187);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.BackgroundImage = global::LoxleyOrbit.FaceScan.Properties.Resources.Screenshot_2023_05_01_115107;
+            this.pictureBox.Location = new System.Drawing.Point(261, 92);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(283, 173);
+            this.pictureBox.TabIndex = 0;
+            this.pictureBox.TabStop = false;
+            // 
+            // loading_box
+            // 
+            this.loading_box.BackColor = System.Drawing.Color.Transparent;
+            this.loading_box.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.loading_box.Image = global::LoxleyOrbit.FaceScan.Properties.Resources.Load_Clock;
+            this.loading_box.Location = new System.Drawing.Point(1510, 388);
+            this.loading_box.Name = "loading_box";
+            this.loading_box.Size = new System.Drawing.Size(306, 243);
+            this.loading_box.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.loading_box.TabIndex = 146;
+            this.loading_box.TabStop = false;
+            // 
+            // Overlay_box
+            // 
+            this.Overlay_box.BackColor = System.Drawing.Color.Transparent;
+            this.Overlay_box.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Overlay_box.Image = global::LoxleyOrbit.FaceScan.Properties.Resources.Head_Shoulder_Black;
+            this.Overlay_box.Location = new System.Drawing.Point(1510, 252);
+            this.Overlay_box.Name = "Overlay_box";
+            this.Overlay_box.Size = new System.Drawing.Size(201, 109);
+            this.Overlay_box.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Overlay_box.TabIndex = 147;
+            this.Overlay_box.TabStop = false;
+            // 
+            // Cam_pic
+            // 
+            this.Cam_pic.BackColor = System.Drawing.Color.Transparent;
+            this.Cam_pic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Cam_pic.Location = new System.Drawing.Point(1282, 224);
+            this.Cam_pic.Name = "Cam_pic";
+            this.Cam_pic.Size = new System.Drawing.Size(222, 137);
+            this.Cam_pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Cam_pic.TabIndex = 148;
+            this.Cam_pic.TabStop = false;
             // 
             // FormKYC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.pnl_no_retry);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.result_panel);
             this.Controls.Add(this.txt_log);
             this.Controls.Add(this.loading_box);
@@ -356,12 +438,15 @@ namespace LoxleyOrbit.FaceScan
             this.Text = "FormKYC";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormKYC_FormClosing);
             this.Load += new System.EventHandler(this.FormKYC_Load);
+            this.result_panel.ResumeLayout(false);
+            this.result_panel.PerformLayout();
+            this.pnl_no_retry.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.loading_box)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Overlay_box)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Cam_pic)).EndInit();
-            this.result_panel.ResumeLayout(false);
-            this.result_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -394,5 +479,11 @@ namespace LoxleyOrbit.FaceScan
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.Label Desc;
         private System.Windows.Forms.Label Head;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Panel pnl_no_retry;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
