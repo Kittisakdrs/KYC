@@ -146,6 +146,7 @@ namespace LoxleyOrbit.FaceScan
             if (table != null)
             {
                 string id = table.Rows[0]["NationalID"].ToString().Trim();
+                m_txtID.Text = table.Rows[0]["NationalID"].ToString().Trim();
                 string name = table.Rows[0]["ThaiTitleName"].ToString().Trim() + " "
                     + table.Rows[0]["ThaiFirstName"].ToString().Trim() + " " + table.Rows[0]["ThaiLastName"].ToString().Trim();
                 string p_name = table.Rows[0]["ThaiTitleName"].ToString().Trim();
@@ -266,7 +267,7 @@ namespace LoxleyOrbit.FaceScan
             m_picPhoto.Image = null;
             lblStatus.Text = "Status: Reading...";
 
-            ReadCard();
+            //ReadCard();
         }
 
         private void btngetReaderID_Click(object sender, EventArgs e)
@@ -357,332 +358,333 @@ namespace LoxleyOrbit.FaceScan
         }
 
         TimeSpan stopKiosk;
-        protected void ReadCard()
-        {
-            if (webBrowser.Document == null) return;
-            if (DateTime.Now.TimeOfDay >= stopKiosk)
-                return;
+        //protected void ReadCard()
+        //{
+        //    if (webBrowser.Document == null) return;
+        //    if (DateTime.Now.TimeOfDay >= stopKiosk)
+        //        return;
 
-            this.Enabled = false;
+        //    this.Enabled = false;
 
-            // web show progress
-            this.Invoke(new MethodInvoker(delegate ()
-            {
-                object result = webBrowser.Document.InvokeScript("open_progress"); // second parameter is jsonString
-            }));
+        //    // web show progress
+        //    this.Invoke(new MethodInvoker(delegate ()
+        //    {
+        //        object result = webBrowser.Document.InvokeScript("open_progress"); // second parameter is jsonString
+        //    }));
 
-            Application.DoEvents();
-            System.Threading.Thread.Sleep(200);
-            reader = new IDReaderDotNetService("Identiv uTrust 2700 R Smart Card Reader 0", this);
-            DataTable table = reader.ReadData(false);
+        //    Application.DoEvents();
+        //    System.Threading.Thread.Sleep(200);
+        //    reader = new IDReaderDotNetService("Identiv uTrust 2700 R Smart Card Reader 0", this);
+        //    DataTable table = reader.ReadData(false);
 
-            if (table != null)
-            {
-                string id = table.Rows[0]["NationalID"].ToString().Trim();
-                string name = table.Rows[0]["ThaiTitleName"].ToString().Trim() + " "
-                    + table.Rows[0]["ThaiFirstName"].ToString().Trim() + " " + table.Rows[0]["ThaiLastName"].ToString().Trim();
-                string p_name = table.Rows[0]["ThaiTitleName"].ToString().Trim();
-                string l_name = table.Rows[0]["ThaiLastName"].ToString().Trim();
-                string f_name = table.Rows[0]["ThaiFirstName"].ToString().Trim();
+        //    if (table != null)
+        //    {
+        //        m_txtID.Text = table.Rows[0]["NationalID"].ToString().Trim();
+        //        string id = table.Rows[0]["NationalID"].ToString().Trim();
+        //        string name = table.Rows[0]["ThaiTitleName"].ToString().Trim() + " "
+        //            + table.Rows[0]["ThaiFirstName"].ToString().Trim() + " " + table.Rows[0]["ThaiLastName"].ToString().Trim();
+        //        string p_name = table.Rows[0]["ThaiTitleName"].ToString().Trim();
+        //        string l_name = table.Rows[0]["ThaiLastName"].ToString().Trim();
+        //        string f_name = table.Rows[0]["ThaiFirstName"].ToString().Trim();
 
-                string e_p_name = table.Rows[0]["EnglishTitleName"].ToString().Trim();
-                string e_l_name = table.Rows[0]["EnglishLastName"].ToString().Trim();
-                string e_f_name = table.Rows[0]["EnglishFirstName"].ToString().Trim();
-                string e_m_name = table.Rows[0]["EnglishMiddleName"].ToString().Trim();
+        //        string e_p_name = table.Rows[0]["EnglishTitleName"].ToString().Trim();
+        //        string e_l_name = table.Rows[0]["EnglishLastName"].ToString().Trim();
+        //        string e_f_name = table.Rows[0]["EnglishFirstName"].ToString().Trim();
+        //        string e_m_name = table.Rows[0]["EnglishMiddleName"].ToString().Trim();
 
-                string BirthDate = table.Rows[0]["BirthDate"].ToString().Trim();
+        //        string BirthDate = table.Rows[0]["BirthDate"].ToString().Trim();
 
-                // BirthDate = "24930000";
-                if (BirthDate != "")
-                {
-                    BirthDate = BirthDate.Substring(6, 2) + "/" + BirthDate.Substring(4, 2) + "/" + BirthDate.Substring(0, 4);
-                }
+        //        // BirthDate = "24930000";
+        //        if (BirthDate != "")
+        //        {
+        //            BirthDate = BirthDate.Substring(6, 2) + "/" + BirthDate.Substring(4, 2) + "/" + BirthDate.Substring(0, 4);
+        //        }
 
-                string Sex = table.Rows[0]["Sex"].ToString().Trim();
-                string Address = table.Rows[0]["Address"].ToString().Trim();
-                string Moo = table.Rows[0]["Moo"].ToString().Trim();
-                string Soi = table.Rows[0]["Soi"].ToString().Trim();
-                string Thanon = table.Rows[0]["Thanon"].ToString().Trim();
-                string Tumbol = table.Rows[0]["Tumbol"].ToString().Trim();
-                string Amphur = table.Rows[0]["Amphur"].ToString().Trim();
-                string Province = table.Rows[0]["Province"].ToString().Trim();
-                string ExpireDate = table.Rows[0]["ExpireDate"].ToString().Trim();
-                string IssueDate = table.Rows[0]["IssueDate"].ToString().Trim();
+        //        string Sex = table.Rows[0]["Sex"].ToString().Trim();
+        //        string Address = table.Rows[0]["Address"].ToString().Trim();
+        //        string Moo = table.Rows[0]["Moo"].ToString().Trim();
+        //        string Soi = table.Rows[0]["Soi"].ToString().Trim();
+        //        string Thanon = table.Rows[0]["Thanon"].ToString().Trim();
+        //        string Tumbol = table.Rows[0]["Tumbol"].ToString().Trim();
+        //        string Amphur = table.Rows[0]["Amphur"].ToString().Trim();
+        //        string Province = table.Rows[0]["Province"].ToString().Trim();
+        //        string ExpireDate = table.Rows[0]["ExpireDate"].ToString().Trim();
+        //        string IssueDate = table.Rows[0]["IssueDate"].ToString().Trim();
 
-                if (ExpireDate != "")
-                {
-                    //   ExpireDate = "99999999";
-                    ExpireDate = ExpireDate.Substring(6, 2) + "/" + ExpireDate.Substring(4, 2) + "/" + ExpireDate.Substring(0, 4);
-                }
+        //        if (ExpireDate != "")
+        //        {
+        //            //   ExpireDate = "99999999";
+        //            ExpireDate = ExpireDate.Substring(6, 2) + "/" + ExpireDate.Substring(4, 2) + "/" + ExpireDate.Substring(0, 4);
+        //        }
 
 
-                if (IssueDate != "")
-                {
-                    IssueDate = IssueDate.Substring(6, 2) + "/" + IssueDate.Substring(4, 2) + "/" + IssueDate.Substring(0, 4);
-                }
+        //        if (IssueDate != "")
+        //        {
+        //            IssueDate = IssueDate.Substring(6, 2) + "/" + IssueDate.Substring(4, 2) + "/" + IssueDate.Substring(0, 4);
+        //        }
 
-                m_txtID.Text = id;
-                // forward data to url
-                string param = "?id=" + id
-                    + "&com_name=" + "" + "&name=" + name
-                    + "&BirthDate=" + BirthDate
-                    + "&Sex=" + Sex
-                    + "&Address=" + Address
-                    + "&Moo=" + Moo
-                    + "&Soi=" + Soi
-                    + "&Thanon=" + Thanon
-                    + "&Tumbol=" + Tumbol
-                    + "&Amphur=" + Amphur
-                    + "&Province=" + Province
-                    + "&ExpireDate=" + ExpireDate
-                    + "&IssueDate=" + IssueDate
-                    + "&p_name=" + p_name
-                    + "&f_name=" + f_name
-                    + "&l_name=" + l_name
-                    + "&e_p_name=" + e_p_name
-                    + "&e_f_name=" + e_f_name
-                    + "&e_m_name=" + e_m_name
-                    + "&e_l_name=" + e_l_name;
+        //        m_txtID.Text = id;
+        //        // forward data to url
+        //        string param = "?id=" + id
+        //            + "&com_name=" + "" + "&name=" + name
+        //            + "&BirthDate=" + BirthDate
+        //            + "&Sex=" + Sex
+        //            + "&Address=" + Address
+        //            + "&Moo=" + Moo
+        //            + "&Soi=" + Soi
+        //            + "&Thanon=" + Thanon
+        //            + "&Tumbol=" + Tumbol
+        //            + "&Amphur=" + Amphur
+        //            + "&Province=" + Province
+        //            + "&ExpireDate=" + ExpireDate
+        //            + "&IssueDate=" + IssueDate
+        //            + "&p_name=" + p_name
+        //            + "&f_name=" + f_name
+        //            + "&l_name=" + l_name
+        //            + "&e_p_name=" + e_p_name
+        //            + "&e_f_name=" + e_f_name
+        //            + "&e_m_name=" + e_m_name
+        //            + "&e_l_name=" + e_l_name;
 
-                //to_complete(param);
-                LaunchCamera("");
-                //printSlip(cus_name);
-            }
-            else
-            {
-                // web hide progress
-                this.Invoke(new MethodInvoker(delegate ()
-                {
-                    //object result = webBrowser.Document.InvokeScript("close_popup", new string[] { "#progress" }); // second parameter is jsonString
-                    //object result2 = webBrowser.Document.InvokeScript("show_alert"); // second parameter is jsonString
-                    object result = webBrowser.Document.InvokeScript("redirect_to_User_Hn"); // second parameter is jsonString
-                }));
+        //        //to_complete(param);
+        //        LaunchCamera("");
+        //        //printSlip(cus_name);
+        //    }
+        //    else
+        //    {
+        //        // web hide progress
+        //        this.Invoke(new MethodInvoker(delegate ()
+        //        {
+        //            //object result = webBrowser.Document.InvokeScript("close_popup", new string[] { "#progress" }); // second parameter is jsonString
+        //            //object result2 = webBrowser.Document.InvokeScript("show_alert"); // second parameter is jsonString
+        //            object result = webBrowser.Document.InvokeScript("redirect_to_User_Hn"); // second parameter is jsonString
+        //        }));
 
-                //webBrowser.Navigate("http://test-kiosk.chulacareapp.com/OneMLWeb/User_Hn.aspx");
-            }
+        //        //webBrowser.Navigate("http://test-kiosk.chulacareapp.com/OneMLWeb/User_Hn.aspx");
+        //    }
 
-            #region
-            //speedReadAll = new Stopwatch();
-            //speedReadText = new Stopwatch();
+        //    #region
+        //    //speedReadAll = new Stopwatch();
+        //    //speedReadText = new Stopwatch();
 
-            //speedReadAll.Start();
-            //speedReadText.Start();
+        //    //speedReadAll.Start();
+        //    //speedReadText.Start();
 
-            //StopTimer();
+        //    //StopTimer();
 
-            //try
-            //{
-            //    this.Invoke(new MethodInvoker(delegate ()
-            //    {
-            //        object result = webBrowser.Document.InvokeScript("open_progress"); // second parameter is jsonString
-            //    }));
-            //}
-            //catch { };
+        //    //try
+        //    //{
+        //    //    this.Invoke(new MethodInvoker(delegate ()
+        //    //    {
+        //    //        object result = webBrowser.Document.InvokeScript("open_progress"); // second parameter is jsonString
+        //    //    }));
+        //    //}
+        //    //catch { };
 
-            //String strTerminal = m_ListReaderCard.GetItemText(m_ListReaderCard.SelectedItem);
-            //int obj = selectReader(strTerminal);
-            //if (obj < 0)
-            //{
-            //    String m;
-            //    m = String.Format("Error: {0} ", obj);
+        //    //String strTerminal = m_ListReaderCard.GetItemText(m_ListReaderCard.SelectedItem);
+        //    //int obj = selectReader(strTerminal);
+        //    //if (obj < 0)
+        //    //{
+        //    //    String m;
+        //    //    m = String.Format("Error: {0} ", obj);
 
-            //    lblStatus.Text = "Status: Error " + obj;
-            //    MessageBox.Show(m, Application.ProductName);
+        //    //    lblStatus.Text = "Status: Error " + obj;
+        //    //    MessageBox.Show(m, Application.ProductName);
 
-            //    RDNIDLib.disconnectCardRD(obj);
-            //    RDNIDLib.deselectReaderRD(obj);
+        //    //    RDNIDLib.disconnectCardRD(obj);
+        //    //    RDNIDLib.deselectReaderRD(obj);
 
-            //    to_notsuccess("", "", false);
-            //    return obj;
-            //}
+        //    //    to_notsuccess("", "", false);
+        //    //    return obj;
+        //    //}
 
-            //Int32 nInsertCard = 0;
-            //nInsertCard = RDNIDLib.connectCardRD(obj);
-            //if (nInsertCard != DefineConstants.NID_SUCCESS)
-            //{
-            //    String m;
-            //    m = String.Format("Error: {0} ", nInsertCard);
+        //    //Int32 nInsertCard = 0;
+        //    //nInsertCard = RDNIDLib.connectCardRD(obj);
+        //    //if (nInsertCard != DefineConstants.NID_SUCCESS)
+        //    //{
+        //    //    String m;
+        //    //    m = String.Format("Error: {0} ", nInsertCard);
 
-            //    lblStatus.Text = "Status: Error " + nInsertCard;
-            //    MessageBox.Show(m, Application.ProductName);
+        //    //    lblStatus.Text = "Status: Error " + nInsertCard;
+        //    //    MessageBox.Show(m, Application.ProductName);
 
-            //    RDNIDLib.disconnectCardRD(obj);
-            //    RDNIDLib.deselectReaderRD(obj);
+        //    //    RDNIDLib.disconnectCardRD(obj);
+        //    //    RDNIDLib.deselectReaderRD(obj);
 
-            //    to_notsuccess("", "", false);
-            //    return nInsertCard;
-            //}
+        //    //    to_notsuccess("", "", false);
+        //    //    return nInsertCard;
+        //    //}
 
-            //byte[] data = new byte[1024];
-            //int res = RDNIDLib.getNIDTextRD(obj, data, data.Length);
-            //if (res != DefineConstants.NID_SUCCESS)
-            //{
-            //    String m;
-            //    m = String.Format("Error: {0} ", res);
+        //    //byte[] data = new byte[1024];
+        //    //int res = RDNIDLib.getNIDTextRD(obj, data, data.Length);
+        //    //if (res != DefineConstants.NID_SUCCESS)
+        //    //{
+        //    //    String m;
+        //    //    m = String.Format("Error: {0} ", res);
 
-            //    lblStatus.Text = "Status: Error " + res;
-            //    MessageBox.Show(m, Application.ProductName);
-            //    speedReadText.Stop();
-            //    speedReadAll.Stop();
-            //    RDNIDLib.disconnectCardRD(obj);
-            //    RDNIDLib.deselectReaderRD(obj);
+        //    //    lblStatus.Text = "Status: Error " + res;
+        //    //    MessageBox.Show(m, Application.ProductName);
+        //    //    speedReadText.Stop();
+        //    //    speedReadAll.Stop();
+        //    //    RDNIDLib.disconnectCardRD(obj);
+        //    //    RDNIDLib.deselectReaderRD(obj);
 
-            //    to_notsuccess("", "", false);
-            //    return res;
-            //}
+        //    //    to_notsuccess("", "", false);
+        //    //    return res;
+        //    //}
 
-            //speedReadText.Stop();
+        //    //speedReadText.Stop();
 
-            //String NIDData = aByteToString(data);
-            //if (NIDData == "")
-            //{
-            //    lblStatus.Text = "Status: Read Text error";
+        //    //String NIDData = aByteToString(data);
+        //    //if (NIDData == "")
+        //    //{
+        //    //    lblStatus.Text = "Status: Read Text error";
 
-            //    to_notsuccess("", "", false);
-            //    MessageBox.Show("Read Text error");
-            //}
-            //else
-            //{
-            //    string[] fields = NIDData.Split('#');
+        //    //    to_notsuccess("", "", false);
+        //    //    MessageBox.Show("Read Text error");
+        //    //}
+        //    //else
+        //    //{
+        //    //    string[] fields = NIDData.Split('#');
 
-            //    m_txtID.Text = fields[(int)NID_FIELD.NID_Number];                             // or use m_txtID.Text = fields[(int)NID_FIELD.NID_Number];
+        //    //    m_txtID.Text = fields[(int)NID_FIELD.NID_Number];                             // or use m_txtID.Text = fields[(int)NID_FIELD.NID_Number];
 
-            //    String fullname = fields[(int)NID_FIELD.TITLE_T] + " " +
-            //                        fields[(int)NID_FIELD.NAME_T] + " " +
-            //                        fields[(int)NID_FIELD.MIDNAME_T] + " " +
-            //                        fields[(int)NID_FIELD.SURNAME_T].TrimEnd();  //Remove space
-            //    m_txtFullNameT.Text = fullname;
+        //    //    String fullname = fields[(int)NID_FIELD.TITLE_T] + " " +
+        //    //                        fields[(int)NID_FIELD.NAME_T] + " " +
+        //    //                        fields[(int)NID_FIELD.MIDNAME_T] + " " +
+        //    //                        fields[(int)NID_FIELD.SURNAME_T].TrimEnd();  //Remove space
+        //    //    m_txtFullNameT.Text = fullname;
 
-            //    fullname = fields[(int)NID_FIELD.TITLE_E] + " " +
-            //                        fields[(int)NID_FIELD.NAME_E] + " " +
-            //                        fields[(int)NID_FIELD.MIDNAME_E] + " " +
-            //                        fields[(int)NID_FIELD.SURNAME_E].TrimEnd();  //Remove space
-            //    ;
-            //    m_txtFullNameE.Text = fullname;
+        //    //    fullname = fields[(int)NID_FIELD.TITLE_E] + " " +
+        //    //                        fields[(int)NID_FIELD.NAME_E] + " " +
+        //    //                        fields[(int)NID_FIELD.MIDNAME_E] + " " +
+        //    //                        fields[(int)NID_FIELD.SURNAME_E].TrimEnd();  //Remove space
+        //    //    ;
+        //    //    m_txtFullNameE.Text = fullname;
 
-            //    m_txtBrithDate.Text = _yyyymmdd_(fields[(int)NID_FIELD.BIRTH_DATE]);
+        //    //    m_txtBrithDate.Text = _yyyymmdd_(fields[(int)NID_FIELD.BIRTH_DATE]);
 
-            //    string txtAddrees = "";
+        //    //    string txtAddrees = "";
 
-            //    if (fields[(int)NID_FIELD.HOME_NO] != "") txtAddrees += fields[(int)NID_FIELD.HOME_NO] + "   ";
-            //    if (fields[(int)NID_FIELD.MOO] != "") txtAddrees += fields[(int)NID_FIELD.MOO] + "   ";
-            //    if (fields[(int)NID_FIELD.TROK] != "") txtAddrees += fields[(int)NID_FIELD.TROK] + "   ";
-            //    if (fields[(int)NID_FIELD.SOI] != "") txtAddrees += fields[(int)NID_FIELD.SOI] + "   ";
-            //    if (fields[(int)NID_FIELD.ROAD] != "") txtAddrees += fields[(int)NID_FIELD.ROAD] + "   ";
-            //    if (fields[(int)NID_FIELD.TUMBON] != "") txtAddrees += fields[(int)NID_FIELD.TUMBON] + "   ";
-            //    if (fields[(int)NID_FIELD.AMPHOE] != "") txtAddrees += fields[(int)NID_FIELD.AMPHOE] + "   ";
-            //    if (fields[(int)NID_FIELD.PROVINCE] != "") txtAddrees += fields[(int)NID_FIELD.PROVINCE].TrimEnd();
+        //    //    if (fields[(int)NID_FIELD.HOME_NO] != "") txtAddrees += fields[(int)NID_FIELD.HOME_NO] + "   ";
+        //    //    if (fields[(int)NID_FIELD.MOO] != "") txtAddrees += fields[(int)NID_FIELD.MOO] + "   ";
+        //    //    if (fields[(int)NID_FIELD.TROK] != "") txtAddrees += fields[(int)NID_FIELD.TROK] + "   ";
+        //    //    if (fields[(int)NID_FIELD.SOI] != "") txtAddrees += fields[(int)NID_FIELD.SOI] + "   ";
+        //    //    if (fields[(int)NID_FIELD.ROAD] != "") txtAddrees += fields[(int)NID_FIELD.ROAD] + "   ";
+        //    //    if (fields[(int)NID_FIELD.TUMBON] != "") txtAddrees += fields[(int)NID_FIELD.TUMBON] + "   ";
+        //    //    if (fields[(int)NID_FIELD.AMPHOE] != "") txtAddrees += fields[(int)NID_FIELD.AMPHOE] + "   ";
+        //    //    if (fields[(int)NID_FIELD.PROVINCE] != "") txtAddrees += fields[(int)NID_FIELD.PROVINCE].TrimEnd();
 
-            //    m_txtAddress.Text = txtAddrees;
+        //    //    m_txtAddress.Text = txtAddrees;
 
-            //    if (fields[(int)NID_FIELD.GENDER] == "1")
-            //    {
-            //        m_txtGender.Text = "ชาย";
-            //    }
-            //    else if (fields[(int)NID_FIELD.GENDER] == "2")
-            //    {
-            //        m_txtGender.Text = "หญิง";
-            //    }
+        //    //    if (fields[(int)NID_FIELD.GENDER] == "1")
+        //    //    {
+        //    //        m_txtGender.Text = "ชาย";
+        //    //    }
+        //    //    else if (fields[(int)NID_FIELD.GENDER] == "2")
+        //    //    {
+        //    //        m_txtGender.Text = "หญิง";
+        //    //    }
 
-            //    m_txtIssueDate.Text = _yyyymmdd_(fields[(int)NID_FIELD.ISSUE_DATE]);
-            //    m_txtExpiryDate.Text = _yyyymmdd_(fields[(int)NID_FIELD.EXPIRY_DATE]);
-            //    if ("99999999" == m_txtExpiryDate.Text)
-            //        m_txtExpiryDate.Text = "99999999 ตลอดชีพ";
-            //    m_txtIssueNum.Text = fields[(int)NID_FIELD.ISSUE_NUM];
-            //    m_txtIssueplace.Text = fields[(int)NID_FIELD.ISSUE_PLACE].TrimEnd();  //Remove space
-            //}
+        //    //    m_txtIssueDate.Text = _yyyymmdd_(fields[(int)NID_FIELD.ISSUE_DATE]);
+        //    //    m_txtExpiryDate.Text = _yyyymmdd_(fields[(int)NID_FIELD.EXPIRY_DATE]);
+        //    //    if ("99999999" == m_txtExpiryDate.Text)
+        //    //        m_txtExpiryDate.Text = "99999999 ตลอดชีพ";
+        //    //    m_txtIssueNum.Text = fields[(int)NID_FIELD.ISSUE_NUM];
+        //    //    m_txtIssueplace.Text = fields[(int)NID_FIELD.ISSUE_PLACE].TrimEnd();  //Remove space
+        //    //}
 
-            //byte[] NIDPicture = new byte[1024 * 5];
-            //int imgsize = NIDPicture.Length;
-            //res = RDNIDLib.getNIDPhotoRD(obj, NIDPicture, out imgsize);
+        //    //byte[] NIDPicture = new byte[1024 * 5];
+        //    //int imgsize = NIDPicture.Length;
+        //    //res = RDNIDLib.getNIDPhotoRD(obj, NIDPicture, out imgsize);
 
-            //if (res != DefineConstants.NID_SUCCESS)
-            //{
-            //    String m;
-            //    m = String.Format("Error: {0} ", res);
+        //    //if (res != DefineConstants.NID_SUCCESS)
+        //    //{
+        //    //    String m;
+        //    //    m = String.Format("Error: {0} ", res);
 
-            //    lblStatus.Text = "Status: Error " + res;
-            //    MessageBox.Show(m, Application.ProductName);
-            //    speedReadAll.Stop();
-            //    RDNIDLib.disconnectCardRD(obj);
-            //    RDNIDLib.deselectReaderRD(obj);
+        //    //    lblStatus.Text = "Status: Error " + res;
+        //    //    MessageBox.Show(m, Application.ProductName);
+        //    //    speedReadAll.Stop();
+        //    //    RDNIDLib.disconnectCardRD(obj);
+        //    //    RDNIDLib.deselectReaderRD(obj);
 
-            //    to_notsuccess("", "", false);
-            //    return res;
-            //}
+        //    //    to_notsuccess("", "", false);
+        //    //    return res;
+        //    //}
 
-            //speedReadAll.Stop();
+        //    //speedReadAll.Stop();
 
-            //lbl_Time.Text = string.Format("Read Text: {0} s, Text + Photo: {1} s", speedReadText.Elapsed.TotalSeconds.ToString("f2"), speedReadAll.Elapsed.TotalSeconds.ToString("f2"));
+        //    //lbl_Time.Text = string.Format("Read Text: {0} s, Text + Photo: {1} s", speedReadText.Elapsed.TotalSeconds.ToString("f2"), speedReadAll.Elapsed.TotalSeconds.ToString("f2"));
 
-            //byte[] byteImage = NIDPicture;
-            //if (byteImage == null)
-            //{
-            //    lblStatus.Text = "Status: Read Photo error";
-            //    MessageBox.Show("Read Photo error", Application.ProductName);
-            //    to_notsuccess("", "", false);
-            //}
-            //else
-            //{
-            //    string fileName = @"Images/face-detect-set/fromReaderCard/" + m_txtID.Text + ".jpg";
-            //    //m_picPhoto
-            //    Image img = Image.FromStream(new MemoryStream(byteImage));
-            //    Bitmap MyImage = new Bitmap(img, m_picPhoto.Width - 2, m_picPhoto.Height - 2);
-            //    m_picPhoto.Image = (Image)MyImage;
+        //    //byte[] byteImage = NIDPicture;
+        //    //if (byteImage == null)
+        //    //{
+        //    //    lblStatus.Text = "Status: Read Photo error";
+        //    //    MessageBox.Show("Read Photo error", Application.ProductName);
+        //    //    to_notsuccess("", "", false);
+        //    //}
+        //    //else
+        //    //{
+        //    //    string fileName = @"Images/face-detect-set/fromReaderCard/" + m_txtID.Text + ".jpg";
+        //    //    //m_picPhoto
+        //    //    Image img = Image.FromStream(new MemoryStream(byteImage));
+        //    //    Bitmap MyImage = new Bitmap(img, m_picPhoto.Width - 2, m_picPhoto.Height - 2);
+        //    //    m_picPhoto.Image = (Image)MyImage;
 
-            //    if (System.IO.File.Exists(fileName) == false)
-            //    {
-            //        m_picPhoto.Image.Save(fileName, ImageFormat.Jpeg);
-            //    }
+        //    //    if (System.IO.File.Exists(fileName) == false)
+        //    //    {
+        //    //        m_picPhoto.Image.Save(fileName, ImageFormat.Jpeg);
+        //    //    }
 
-            //    lblStatus.Text = "Status: Ready";
+        //    //    lblStatus.Text = "Status: Ready";
 
-            //    string param = "?id=" + m_txtID.Text.ToString()
-            //                + "&com_name=" + ""
-            //                + "&hn=" + ""
-            //                + "&name=" + m_txtFullNameT.Text.ToString()
-            //                + "&BirthDate=" + m_txtBrithDate.Text.ToString()
-            //                + "&Sex=" + m_txtGender.Text.ToString()
-            //                + "&Address=" + ""
-            //                + "&Moo=" + ""
-            //                + "&Soi=" + ""
-            //                + "&Thanon=" + ""
-            //                + "&Tumbol=" + ""
-            //                + "&Amphur=" + ""
-            //                + "&Province=" + ""
-            //                + "&ExpireDate=" + ""
-            //                + "&IssueDate=" + ""
-            //                + "&p_name=" + ""
-            //                + "&f_name=" + ""
-            //                + "&l_name=" + ""
-            //                + "&e_p_name=" + ""
-            //                + "&e_f_name=" + ""
-            //                + "&e_m_name=" + ""
-            //                + "&e_l_name=" + ""
-            //                + "&correlationId=" + ""
-            //                + "&claimCode=" + ""
-            //                + "&claimType=" + ""
-            //                + "&createdDate=" + "";
+        //    //    string param = "?id=" + m_txtID.Text.ToString()
+        //    //                + "&com_name=" + ""
+        //    //                + "&hn=" + ""
+        //    //                + "&name=" + m_txtFullNameT.Text.ToString()
+        //    //                + "&BirthDate=" + m_txtBrithDate.Text.ToString()
+        //    //                + "&Sex=" + m_txtGender.Text.ToString()
+        //    //                + "&Address=" + ""
+        //    //                + "&Moo=" + ""
+        //    //                + "&Soi=" + ""
+        //    //                + "&Thanon=" + ""
+        //    //                + "&Tumbol=" + ""
+        //    //                + "&Amphur=" + ""
+        //    //                + "&Province=" + ""
+        //    //                + "&ExpireDate=" + ""
+        //    //                + "&IssueDate=" + ""
+        //    //                + "&p_name=" + ""
+        //    //                + "&f_name=" + ""
+        //    //                + "&l_name=" + ""
+        //    //                + "&e_p_name=" + ""
+        //    //                + "&e_f_name=" + ""
+        //    //                + "&e_m_name=" + ""
+        //    //                + "&e_l_name=" + ""
+        //    //                + "&correlationId=" + ""
+        //    //                + "&claimCode=" + ""
+        //    //                + "&claimType=" + ""
+        //    //                + "&createdDate=" + "";
 
-            //    //to_complete(param);
-            //    LaunchCamera("");
-            //}
+        //    //    //to_complete(param);
+        //    //    LaunchCamera("");
+        //    //}
 
-            //RDNIDLib.disconnectCardRD(obj);
-            //RDNIDLib.deselectReaderRD(obj);
-            #endregion
+        //    //RDNIDLib.disconnectCardRD(obj);
+        //    //RDNIDLib.deselectReaderRD(obj);
+        //    #endregion
 
-            try
-            {
-                this.Invoke(new MethodInvoker(delegate ()
-                {
-                    object result = webBrowser.Document.InvokeScript("close_popup"); // second parameter is jsonString
-                }));
-            }
-            catch { };
+        //    try
+        //    {
+        //        this.Invoke(new MethodInvoker(delegate ()
+        //        {
+        //            object result = webBrowser.Document.InvokeScript("close_popup"); // second parameter is jsonString
+        //        }));
+        //    }
+        //    catch { };
 
-            return;
-        }
+        //    return;
+        //}
 
         //private void OnCardInserted(object sender, EventArgs e)
         //{
