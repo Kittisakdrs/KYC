@@ -118,9 +118,14 @@ namespace LoxleyOrbit.FaceScan
             //else
             //    Server_down = false;
         }
-
+        private bool startat = true;
         private void OnCardInserted(object sender, EventArgs e)
         {
+            if (startat)
+            {
+                startat = false;
+                return;
+            };
             if (webBrowser.Document == null) return;
             if (DateTime.Now.TimeOfDay >= stopKiosk)
                 return;
@@ -205,18 +210,22 @@ namespace LoxleyOrbit.FaceScan
                     + "&e_m_name=" + e_m_name
                     + "&e_l_name=" + e_l_name;
 
-                to_complete(param);
+                webBrowser.Navigate("http://test-kiosk.chulacareapp.com/OneMLWeb/SelectUserType.aspx");
+
+                LaunchCamera("");
+
                 //printSlip(cus_name);
             }
             else
             {
-                // web hide progress
-                this.Invoke(new MethodInvoker(delegate ()
-                {
-                    //object result = webBrowser.Document.InvokeScript("close_popup", new string[] { "#progress" }); // second parameter is jsonString
-                    //object result2 = webBrowser.Document.InvokeScript("show_alert"); // second parameter is jsonString
-                    object result = webBrowser.Document.InvokeScript("to_notsuccess"); // second parameter is jsonString
-                }));
+                webBrowser.Navigate("http://test-kiosk.chulacareapp.com/OneMLWeb/User_Hn.aspx");
+                //// web hide progress
+                //this.Invoke(new MethodInvoker(delegate ()
+                //{
+                //    //object result = webBrowser.Document.InvokeScript("close_popup", new string[] { "#progress" }); // second parameter is jsonString
+                //    //object result2 = webBrowser.Document.InvokeScript("show_alert"); // second parameter is jsonString
+                //    object result = webBrowser.Document.InvokeScript("to_notsuccess"); // second parameter is jsonString
+                //}));
             }
 
             Application.DoEvents();
@@ -321,7 +330,7 @@ namespace LoxleyOrbit.FaceScan
         {
             //FormKYC formKYC = new FormKYC();
             //formKYC.m_txtID = m_txtID.Text.Trim();
-            //formKYC.m_type = "ID"
+            //formKYC.m_type = "ID";
             //formKYC.Show();
 
             //try
@@ -448,6 +457,8 @@ namespace LoxleyOrbit.FaceScan
                     //object result2 = webBrowser.Document.InvokeScript("show_alert"); // second parameter is jsonString
                     object result = webBrowser.Document.InvokeScript("redirect_to_User_Hn"); // second parameter is jsonString
                 }));
+
+                //webBrowser.Navigate("http://test-kiosk.chulacareapp.com/OneMLWeb/User_Hn.aspx");
             }
 
             #region
