@@ -369,24 +369,7 @@ namespace LoxleyOrbit.FaceScan
         }
         private void CAPTURE_Click(object sender, EventArgs e)
         {
-            string fileName = @"Images/face-detect-set/fromCamera/" + m_txtID + ".jpg";
-            //Cam_pic.Image.Save(fileName, System.Drawing.Imaging.ImageFormat.Jpeg);
-
-            //try
-            //{
-            //    if (!(videoSource == null))
-            //        if (videoSource.IsRunning)
-            //        {
-            //            SetVideoSource(null);
-
-            //            videoSource = new VideoCaptureDevice(videoDevices[selected].MonikerString);
-            //            SetResolution(videoSource);
-            //            videoSource.NewFrame += new NewFrameEventHandler(video_NewFrame);
-            //            videoSource.Start();
-            //        }
-            //}
-
-            //catch { }
+            Capture_cam_pic(true);
         }
         private void FACEDETECTION_Click(object sender, EventArgs e)
         {
@@ -718,11 +701,7 @@ namespace LoxleyOrbit.FaceScan
                 Set_result(true,true); // Result ผ่าน
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 DialogResult result = MessageBox.Show("MATCH", "แจ้งเตือน", buttons);
-                if (result == DialogResult.OK)
-                {
-                    SetPictureBox3(false); // Loading
-                    CloseForm();
-                }
+                SetPictureBox3(false); // Loading
             }
             else
             {
@@ -814,6 +793,7 @@ namespace LoxleyOrbit.FaceScan
         delegate void SetResultBoxCallback(bool c);
         delegate void Setpnl_no_retryCallback(bool status, bool c);
         delegate void SetPictureBox3Callback(bool c);
+        delegate void SetCapture_cam_pic(bool c);
         private void SetVideoSource(VideoCaptureDevice c)
         {
             if (this.loading_box.InvokeRequired)
@@ -927,6 +907,37 @@ namespace LoxleyOrbit.FaceScan
         {
             Setlb_txt("");
         }
+        private void Capture_cam_pic(bool c)
+        {
+            if (this.Cam_pic.InvokeRequired)
+            {
+                SetCapture_cam_pic d = new SetCapture_cam_pic(Capture_cam_pic);
+                this.Invoke(d, new object[] { c });
+            }
+            else
+            {
+                string fileName = @"Images/face-detect-set/fromCamera/" + m_txtID + ".jpg";
+                Cam_pic.Image.Save(fileName, ImageFormat.Jpeg);
+
+                try
+                {
+                    if (!(videoSource == null))
+                        if (videoSource.IsRunning)
+                        {
+                            SetVideoSource(null);
+
+                            videoSource = new VideoCaptureDevice(videoDevices[selected].MonikerString);
+                            SetResolution(videoSource);
+                            videoSource.NewFrame += new NewFrameEventHandler(video_NewFrame);
+                            videoSource.Start();
+                        }
+                }
+
+                catch { }
+            }
+        }
+
+
         private void CloseForm()
         {
             if (this.InvokeRequired)
@@ -1055,6 +1066,9 @@ namespace LoxleyOrbit.FaceScan
         private void pictureBox4_Click(object sender, EventArgs e)
         {
             result_panel.Visible = false;
+            RESET_CAMERA();
+            selected = comboBox1.SelectedIndex;
+            START_Click(null, null);
         }//สแกนซ้ำ
 
         private void pictureBox3_Click(object sender, EventArgs e)
