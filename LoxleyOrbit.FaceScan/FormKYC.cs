@@ -23,6 +23,7 @@ using System.Threading;
 using Emgu.CV.Dnn;
 using CSCore.CoreAudioAPI;
 using System.Media;
+using System.Drawing.Drawing2D;
 
 namespace LoxleyOrbit.FaceScan
 {
@@ -30,6 +31,7 @@ namespace LoxleyOrbit.FaceScan
     [System.Runtime.InteropServices.ComVisibleAttribute(true)]
     public partial class FormKYC : Form
     {
+        #region var
         private readonly string msg_near = "กรุณาขยับเข้าหากล้องเพื่อสแกนใบหน้า";
         private readonly string msg_far = "กรุณาถอยห่างจากกล้องเพื่อสแกนใบหน้า";
         private readonly string msg_adjust = "กรุณายืนห่างประมาณ 40-60 เซนติเมตร";
@@ -54,7 +56,6 @@ namespace LoxleyOrbit.FaceScan
 
         int desiredWidth = 1920;
         int desiredHeight = 1080;
-
         FaceResult faceResult = new FaceResult();
 
         string retry = "1st";
@@ -68,7 +69,13 @@ namespace LoxleyOrbit.FaceScan
         int sizeX1 = 210;//กรอบนอก
         int sizeX3 = 400;//กรอบนอก
 
-        #region Audio
+        double focusCenterX = 0.5; // 50%
+        double focusCenterY = 0.5; // 50%
+        double scaleFactor = 1.75;
+        double aspectRatio = 16.0 / 9.0; // 16:9 aspect ratio
+        #endregion
+
+        #region Audio Var
         static string audio1 = @"Audio\Audio1.wav";
         static string audio2 = @"Audio\Audio2.wav";
         static string audio3 = @"Audio\Audio3.wav";
@@ -81,7 +88,6 @@ namespace LoxleyOrbit.FaceScan
         private SoundPlayer player;
         #endregion
 
-        #region 1234
         public FormKYC()
         {
             InitializeComponent();
@@ -194,9 +200,10 @@ namespace LoxleyOrbit.FaceScan
             #region result_panel
             Label Lhead = result_panel.Controls["Head"] as Label;
             Label Ldesc = result_panel.Controls["desc"] as Label;
+
             PictureBox Pbox = result_panel.Controls["pictureBox"] as PictureBox;
+            PictureBox Pbtn_exit = result_panel.Controls["pictureBox3"] as PictureBox;
             Button B2 = result_panel.Controls["button2"] as Button;
-            Button B3 = result_panel.Controls["button3"] as Button;
 
             result_panel.Location = new Point(x = x/2 - result_panel.Width/2, y = y / 2 - result_panel.Height / 2);
             Lhead.Location = new Point(x = result_panel.Width / 2 - Lhead.Width / 2 , y = Lhead.Location.Y);
@@ -223,6 +230,16 @@ namespace LoxleyOrbit.FaceScan
             //chrome.AddressChanged += Chrome_AddressChanged;
             #endregion
         }
+
+        private void FormKYC_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (this.Owner != null)
+            {
+                this.Owner.Show();
+                this.Owner.Focus();
+            }
+        }
+
 
         #region Audio Control
         private void PlayAudio(string audio, int timeOut)
@@ -303,28 +320,6 @@ namespace LoxleyOrbit.FaceScan
         //}
         #endregion
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //FaceDetection();
-            //CAPTURE_Click(null, null);
-            //ClearVideo();
-            CloseFrom("ต้องการทำการ eKYC ใหม่หรือไม่?", "แจ้งเตือน");
-        }
-
-        private void RESET_CAMERA()
-        {
-            if (!(videoSource == null))
-                if (videoSource.IsRunning)
-                {
-                    videoSource.SignalToStop();
-                    videoSource = null;
-                }
-
-            kamerabaslat = 1;
-            Cam_pic.Image = null;
-            //pictureBox2.Image = null;
-        }
-
         private void START_Click(object sender, EventArgs e)
         {
             if (islemdurumu == 0)
@@ -360,7 +355,18 @@ namespace LoxleyOrbit.FaceScan
                 }
             }
         }
-
+        private void SetResolution(VideoCaptureDevice videoSource)
+        {
+            VideoCapabilities[] videoCapabilities = videoSource.VideoCapabilities;
+            foreach (VideoCapabilities capabilty in videoCapabilities)
+            {
+                if (capabilty.FrameSize.Width == desiredWidth && capabilty.FrameSize.Height == desiredHeight)
+                {
+                    videoSource.VideoResolution = capabilty;
+                    break;
+                }
+            }
+        }
         private void CAPTURE_Click(object sender, EventArgs e)
         {
             string fileName = @"Images/face-detect-set/fromCamera/" + m_txtID + ".jpg";
@@ -382,10 +388,22 @@ namespace LoxleyOrbit.FaceScan
 
             //catch { }
         }
-
         private void FACEDETECTION_Click(object sender, EventArgs e)
         {
             //FaceDetection();
+        }
+        private void RESET_CAMERA()
+        {
+            if (!(videoSource == null))
+                if (videoSource.IsRunning)
+                {
+                    videoSource.SignalToStop();
+                    videoSource = null;
+                }
+
+            kamerabaslat = 1;
+            Cam_pic.Image = null;
+            //pictureBox2.Image = null;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -393,16 +411,353 @@ namespace LoxleyOrbit.FaceScan
             timer1.Enabled = false;
             timer1.Stop();
         }
-
-        private void FormKYC_FormClosing(object sender, FormClosingEventArgs e)
+        private void video_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
-            if (this.Owner != null)
+            if (radioButton1.Checked)
             {
-                this.Owner.Show();
-                this.Owner.Focus();
+                scaleFactor = 1;
             }
+            else if (radioButton2.Checked)
+            {
+                scaleFactor = 1.25;
+            }
+            else if (radioButton3.Checked)
+            {
+                scaleFactor = 1.5;
+            }
+            else if (radioButton4.Checked)
+            {
+                scaleFactor = 1.75;
+            }
+            else if (radioButton5.Checked)
+            {
+                scaleFactor = 2;
+            }
+
+            Bitmap bitmap = (Bitmap)eventArgs.Frame.Clone();
+
+            int centerX = (int)(bitmap.Width * focusCenterX);
+            int centerY = (int)(bitmap.Height * focusCenterY);
+
+            // Calculate the crop area around the focus center point
+            int cropWidth = (int)(bitmap.Height * aspectRatio * (1.0 / scaleFactor));
+            int cropHeight = (int)(bitmap.Height * (1.0 / scaleFactor));
+            int cropX = centerX - cropWidth / 2;
+            int cropY = centerY - cropHeight / 2;
+            cropX = Math.Max(cropX, 0);
+            cropY = Math.Max(cropY, 0);
+            cropWidth = Math.Min(cropWidth, bitmap.Width - cropX);
+            cropHeight = Math.Min(cropHeight, bitmap.Height - cropY);
+            Rectangle cropArea = new Rectangle(cropX, cropY, cropWidth, cropHeight);
+
+            // Apply the crop filter to the video frame
+            Bitmap croppedFrame = new AForge.Imaging.Filters.Crop(cropArea).Apply(bitmap);
+
+            // Resize the cropped image if necessary
+            if (scaleFactor > 1.0)
+            {
+                int newWidth = (int)(croppedFrame.Width * scaleFactor);
+                int newHeight = (int)(croppedFrame.Height * scaleFactor);
+
+                AForge.Imaging.Filters.ResizeBilinear filter = new AForge.Imaging.Filters.ResizeBilinear(newWidth, newHeight);
+                croppedFrame = filter.Apply(croppedFrame);
+            }
+
+            //// Display the zoomed frame in the VideoSourcePlayer control
+            croppedFrame.RotateFlip(RotateFlipType.RotateNoneFlipX);
+            //Cam_pic.Image = croppedFrame;
+
+            OverlayImage(croppedFrame);
         }
 
+        #region CMMD
+        //private void OverlayImage(Bitmap baseImage)
+        //{
+        //    if (!result_panel.Visible) // ถ้า Result Panel ไม่แสดงจะทำการประมวลผลตามปกติ
+        //    {
+        //        x1 = (desiredWidth / 2) - 190;//กรอบใน
+        //        x3 = (desiredWidth / 2) - 300;//กรอบนอก
+
+        //        y1 = (desiredHeight / 2) - 200;//กรอบใน
+        //        y3 = (desiredHeight / 2) - 320;//กรอบนอก
+
+        //        Mat imgMat = baseImage.ToMat();
+        //        CvInvoke.CvtColor(imgMat, imgMat, ColorConversion.Bgr2Gray);
+        //        Image<Gray, byte> imgGray = imgMat.ToImage<Gray, byte>();
+
+        //        Rectangle[] rectangles = cascadeClassifier.DetectMultiScale(imgGray, 1.2, 1);
+        //        foreach (Rectangle rectangle in rectangles)
+        //        {
+        //            using (Graphics graphics = Graphics.FromImage(baseImage))
+        //            {
+        //                using (Pen pen = new Pen(Color.Red, 3))
+        //                {
+        //                    graphics.DrawRectangle(pen, rectangle);
+        //                    //int x1 = 0;//กรอบใน
+        //                    //int x3 = 0;//กรอบนอก
+
+        //                    //int y1 = 0;//กรอบใน
+        //                    //int y3 = 0;//กรอบนอก
+
+        //                    //int sizeX1 = 210;//กรอบนอก
+        //                    //int sizeX3 = 400;//กรอบนอก
+
+        //                    if ((
+        //                        rectangle.Location.X >= x3 &&  //จุดซ้ายบนของกรอบแดงต้องมากกว่ากรอบนอก
+        //                        rectangle.Location.X <= x1
+        //                        ) && (
+        //                        rectangle.Location.Y >= y3 &&
+        //                        rectangle.Location.Y <= y1
+        //                        ) &&
+        //                        rectangle.Size.Width >= 0 &&
+        //                        rectangle.Size.Height >= 0
+        //                        )
+        //                    {
+        //                        Setlb_txt(msg_fit);
+        //                        this.lb_txt.BackColor = Color.Green;
+        //                        FaceDetection();
+        //                    }
+        //                    else if (rectangle.Location.X < (x3 - 100))//|| rectangle.Location.X > (x3 + sizeX1))
+        //                    {
+        //                        Setlb_txt(msg_center);//ไม่อยู่ตรงกลาง
+        //                        this.lb_txt.BackColor = Color.Blue;
+        //                        PlayAudio(audio2, 6500);
+        //                        //SetPictureBoxLeft(true);
+        //                        //SetTimerClearText(true);
+        //                        Console.WriteLine("Left " + rectangle.Location.X);
+        //                    }
+        //                    else if (rectangle.Location.X < (x3 + 600))
+        //                    {
+        //                        Setlb_txt(msg_center);//ไม่อยู่ตรงกลาง
+        //                        this.lb_txt.BackColor = Color.Blue;
+        //                        PlayAudio(audio2, 6500);
+        //                        //SetPictureBoxRight(true);
+        //                        //SetTimerClearText(true);
+        //                        Console.WriteLine("Right " + rectangle.Location.X);
+        //                    }
+        //                    else if (rectangle.Width <= sizeX3)
+        //                    {
+        //                        Setlb_txt(msg_near);//ไกลเกินไป
+        //                        this.lb_txt.BackColor = Color.Red;
+        //                        PlayAudio(audio4, 6500);
+        //                        //SetTimerClearText(true);
+        //                        Console.WriteLine("Too far " + rectangle.Width);
+        //                    }
+        //                    else if (rectangle.Width >= sizeX1)
+        //                    {
+        //                        Setlb_txt(msg_far);//ใกล้เกินไป
+        //                        this.lb_txt.BackColor = Color.Red;
+        //                        PlayAudio(audio4, 6500);
+        //                        //SetTimerClearText(true);
+        //                        Console.WriteLine("Too close " + rectangle.Width);
+        //                    }
+        //                }
+        //            }
+        //        }
+        //        #region comment
+        //        //using (Graphics g = Graphics.FromImage(baseImage))
+        //        //{
+        //        //    //g.DrawImage(overlayImage, new Rectangle(new Point(0, 0), new Size(baseImage.Width, baseImage.Height)));
+
+        //        //    g.DrawRectangle(new Pen(Color.Yellow, 3), new Rectangle(new Point(x1, y1), new Size(380, 380))); //กรอบใน
+        //        //    g.DrawRectangle(new Pen(Color.Blue, 3), new Rectangle(new Point(x3, y3), new Size(600, 620)));//กรอบนอก
+
+        //        //    g.DrawRectangle(new Pen(Color.White, 3), new Rectangle(new Point(desiredWidth / 2, 1), new Size(1, desiredHeight)));
+        //        //    g.DrawRectangle(new Pen(Color.White, 3), new Rectangle(new Point(1, desiredHeight / 2), new Size(desiredWidth, 1)));
+        //        //}
+        //        #endregion
+        //    }
+        //    else
+        //    {
+        //        //Do nothing
+        //    }
+
+        //    Cam_pic.Image = baseImage;
+        //    //baseImage.Dispose();
+        //}
+        #endregion
+
+        private void OverlayImage(Bitmap baseImage)
+        {
+            if (!result_panel.Visible && !pnl_no_retry.Visible) //เมื่อยังไม่มีการแสดง Result ใดๆ
+            {
+
+                x1 = (desiredWidth / 2) - 190;//กรอบใน
+                x3 = (desiredWidth / 2) - 300;//กรอบนอก
+
+                y1 = (desiredHeight / 2) - 200;//กรอบใน
+                y3 = (desiredHeight / 2) - 320;//กรอบนอก
+
+                Mat imgMat = baseImage.ToMat();
+                CvInvoke.CvtColor(imgMat, imgMat, ColorConversion.Bgr2Gray);
+                Image<Gray, byte> imgGray = imgMat.ToImage<Gray, byte>();
+
+                Rectangle[] rectangles = cascadeClassifier.DetectMultiScale(imgGray, 1.2, 1); // Scan
+                Rectangle Dzone = new Rectangle(new Point(x3, y3), new Size(600, 620)); //กรอบนอก
+                Rectangle Lzone = new Rectangle(new Point(x1, y1), new Size(380, 380)); //กรอบใน
+
+                foreach (Rectangle Fzone in rectangles)
+                {
+                    using (Graphics graphics = Graphics.FromImage(baseImage))
+                    {
+                        using (Pen pen = new Pen(Color.Red, 3))
+                        {
+                            graphics.DrawRectangle(pen, Fzone);
+
+                            graphics.DrawRectangle(new Pen(Color.Yellow, 3), new Rectangle(new Point(x1, y1), new Size(380, 380))); //กรอบใน
+                            graphics.DrawRectangle(new Pen(Color.Blue, 3), new Rectangle(new Point(x3, y3), new Size(600, 620)));//กรอบนอก
+
+                            if (!Dzone.Contains(Fzone))
+                            {
+                                if (Fzone.Left < Dzone.Left)
+                                {
+                                    Setlb_txt(msg_center);//ไม่อยู่ตรงกลาง
+                                    this.lb_txt.BackColor = Color.Blue;
+                                    PlayAudio(audio2, 6500);
+                                    Console.WriteLine("Left");
+                                }
+                                else if (Fzone.Right > Dzone.Right)
+                                {
+                                    Setlb_txt(msg_center);//ไม่อยู่ตรงกลาง
+                                    this.lb_txt.BackColor = Color.Blue;
+                                    PlayAudio(audio2, 6500);
+                                    Console.WriteLine("Right");
+                                }
+                                else
+                                {
+                                    if (Lzone.Contains(Fzone))
+                                    {
+                                        Console.WriteLine("Step back");
+                                        Setlb_txt(msg_far);//ใกล้เกินไป
+                                        this.lb_txt.BackColor = Color.Red;
+                                        PlayAudio(audio4, 6500);
+                                        //SetTimerClearText(true);
+                                    }
+                                    else if (Fzone.Contains(Lzone) && Fzone.Contains(Dzone))
+                                    {
+                                        Console.WriteLine("Step in");
+                                        Setlb_txt(msg_far);//ใกล้เกินไป
+                                        this.lb_txt.BackColor = Color.Red;
+                                        PlayAudio(audio4, 6500);
+                                    }
+                                }
+                            }
+                            else if (Fzone.Contains(Lzone))
+                            {
+                                Console.WriteLine("Booya");
+                                Setlb_txt(msg_fit);
+                                this.lb_txt.BackColor = Color.Green;
+                                FaceDetection();
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                //do nothing
+            }
+            //if (!result_panel.Visible) // ถ้า Result Panel ไม่แสดงจะทำการประมวลผลตามปกติ
+            //{
+            //    x1 = (desiredWidth / 2) - 190;//กรอบใน
+            //    x3 = (desiredWidth / 2) - 300;//กรอบนอก
+
+            //    y1 = (desiredHeight / 2) - 200;//กรอบใน
+            //    y3 = (desiredHeight / 2) - 320;//กรอบนอก
+
+            //    Mat imgMat = baseImage.ToMat();
+            //    CvInvoke.CvtColor(imgMat, imgMat, ColorConversion.Bgr2Gray);
+            //    Image<Gray, byte> imgGray = imgMat.ToImage<Gray, byte>();
+
+            //    Rectangle[] rectangles = cascadeClassifier.DetectMultiScale(imgGray, 1.2, 1);
+            //    foreach (Rectangle rectangle in rectangles)
+            //    {
+            //        using (Graphics graphics = Graphics.FromImage(baseImage))
+            //        {
+            //            using (Pen pen = new Pen(Color.Red, 3))
+            //            {
+            //                graphics.DrawRectangle(pen, rectangle);
+            //                //int x1 = 0;//กรอบใน
+            //                //int x3 = 0;//กรอบนอก
+
+            //                //int y1 = 0;//กรอบใน
+            //                //int y3 = 0;//กรอบนอก
+
+            //                //int sizeX1 = 210;//กรอบนอก
+            //                //int sizeX3 = 400;//กรอบนอก
+
+            //                if ((
+            //                    rectangle.Location.X >= x3 &&  //จุดซ้ายบนของกรอบแดงต้องมากกว่ากรอบนอก
+            //                    rectangle.Location.X <= x1
+            //                    ) && (
+            //                    rectangle.Location.Y >= y3 &&
+            //                    rectangle.Location.Y <= y1
+            //                    ) &&
+            //                    rectangle.Size.Width >= 0 &&
+            //                    rectangle.Size.Height >= 0
+            //                    )
+            //                {
+            //                    Setlb_txt(msg_fit);
+            //                    this.lb_txt.BackColor = Color.Green;
+            //                    FaceDetection();
+            //                }
+            //                else if (rectangle.Location.X < (x3 - 100))//|| rectangle.Location.X > (x3 + sizeX1))
+            //                {
+            //                    Setlb_txt(msg_center);//ไม่อยู่ตรงกลาง
+            //                    this.lb_txt.BackColor = Color.Blue;
+            //                    PlayAudio(audio2, 6500);
+            //                    //SetPictureBoxLeft(true);
+            //                    //SetTimerClearText(true);
+            //                    Console.WriteLine("Left " + rectangle.Location.X);
+            //                }
+            //                else if (rectangle.Location.X < (x3 + 600))
+            //                {
+            //                    Setlb_txt(msg_center);//ไม่อยู่ตรงกลาง
+            //                    this.lb_txt.BackColor = Color.Blue;
+            //                    PlayAudio(audio2, 6500);
+            //                    //SetPictureBoxRight(true);
+            //                    //SetTimerClearText(true);
+            //                    Console.WriteLine("Right " + rectangle.Location.X);
+            //                }
+            //                else if (rectangle.Width <= sizeX3)
+            //                {
+            //                    Setlb_txt(msg_near);//ไกลเกินไป
+            //                    this.lb_txt.BackColor = Color.Red;
+            //                    PlayAudio(audio4, 6500);
+            //                    //SetTimerClearText(true);
+            //                    Console.WriteLine("Too far " + rectangle.Width);
+            //                }
+            //                else if (rectangle.Width >= sizeX1)
+            //                {
+            //                    Setlb_txt(msg_far);//ใกล้เกินไป
+            //                    this.lb_txt.BackColor = Color.Red;
+            //                    PlayAudio(audio4, 6500);
+            //                    //SetTimerClearText(true);
+            //                    Console.WriteLine("Too close " + rectangle.Width);
+            //                }
+            //            }
+            //        }
+            //    }
+            //    #region comment
+            //    //using (Graphics g = Graphics.FromImage(baseImage))
+            //    //{
+            //    //    //g.DrawImage(overlayImage, new Rectangle(new Point(0, 0), new Size(baseImage.Width, baseImage.Height)));
+
+            //    //    g.DrawRectangle(new Pen(Color.Yellow, 3), new Rectangle(new Point(x1, y1), new Size(380, 380))); //กรอบใน
+            //    //    g.DrawRectangle(new Pen(Color.Blue, 3), new Rectangle(new Point(x3, y3), new Size(600, 620)));//กรอบนอก
+
+            //    //    g.DrawRectangle(new Pen(Color.White, 3), new Rectangle(new Point(desiredWidth / 2, 1), new Size(1, desiredHeight)));
+            //    //    g.DrawRectangle(new Pen(Color.White, 3), new Rectangle(new Point(1, desiredHeight / 2), new Size(desiredWidth, 1)));
+            //    //}
+            //    #endregion
+            //}
+            //else
+            //{
+            //    //Do nothing
+            //}
+
+            Cam_pic.Image = baseImage;
+        }
         private void FaceDetection()
         {
             isAudioPlaying = true;
@@ -472,27 +827,26 @@ namespace LoxleyOrbit.FaceScan
 
             if (Same == 1)
             {
-                Set_result(true,true);
+                Set_result(true,true); // Result ผ่าน
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 DialogResult result = MessageBox.Show("MATCH", "แจ้งเตือน", buttons);
                 if (result == DialogResult.OK)
                 {
-                    SetPictureBox3(false);
-                    //SetPictureBox4(false);
+                    SetPictureBox3(false); // Loading
                     CloseForm();
                 }
             }
             else
             {
-                SetPictureBox3(false);
+                SetPictureBox3(false); // Loading
                 if (retry == "1st")
                 {
-                    SetResultBox(true);
+                    SetResultBox(true); // Retry
                     retry = "no";
                 }
                 else
                 {
-                    Set_result(false,true);
+                    Set_result(false,true); // Result ไม่ผ่าน
                 }
 
 
@@ -535,19 +889,15 @@ namespace LoxleyOrbit.FaceScan
             }
         }
 
-        //private object lockObject = new object();
-
-        //algo1backgroundworker_DoWork()
-        //{
-        //    Image imgclone;
-        //    lock (lockObject)
-        //    {
-        //        Image img = this.picturebox.Image;
-        //        imgclone = img.clone();
-        //    }
-
-        //    //operate on imgclone and output it
-        //}
+        #region util
+        public byte[] ImageToByteArray(System.Drawing.Image imageIn)
+        {
+            using (var ms = new MemoryStream())
+            {
+                imageIn.Save(ms, imageIn.RawFormat);
+                return ms.ToArray();
+            }
+        }
 
         private string ToBase64String(string Path)
         {
@@ -566,210 +916,16 @@ namespace LoxleyOrbit.FaceScan
         }
         #endregion
 
-        double focusCenterX = 0.5; // 50%
-        double focusCenterY = 0.5; // 50%
-        double scaleFactor = 1.75;
-        double aspectRatio = 16.0 / 9.0; // 16:9 aspect ratio
-
-        private void video_NewFrame(object sender, NewFrameEventArgs eventArgs)
-        {
-            if (radioButton1.Checked)
-            {
-                scaleFactor = 1;
-            }
-            else if (radioButton2.Checked)
-            {
-                scaleFactor = 1.25;
-            }
-            else if (radioButton3.Checked)
-            {
-                scaleFactor = 1.5;
-            }
-            else if (radioButton4.Checked)
-            {
-                scaleFactor = 1.75;
-            }
-            else if (radioButton5.Checked)
-            {
-                scaleFactor = 2;
-            }
-
-            Bitmap bitmap = (Bitmap)eventArgs.Frame.Clone();
-
-            int centerX = (int)(bitmap.Width * focusCenterX);
-            int centerY = (int)(bitmap.Height * focusCenterY);
-
-            // Calculate the crop area around the focus center point
-            int cropWidth = (int)(bitmap.Height * aspectRatio * (1.0 / scaleFactor));
-            int cropHeight = (int)(bitmap.Height * (1.0 / scaleFactor));
-            int cropX = centerX - cropWidth / 2;
-            int cropY = centerY - cropHeight / 2;
-            cropX = Math.Max(cropX, 0);
-            cropY = Math.Max(cropY, 0);
-            cropWidth = Math.Min(cropWidth, bitmap.Width - cropX);
-            cropHeight = Math.Min(cropHeight, bitmap.Height - cropY);
-            Rectangle cropArea = new Rectangle(cropX, cropY, cropWidth, cropHeight);
-
-            // Apply the crop filter to the video frame
-            Bitmap croppedFrame = new AForge.Imaging.Filters.Crop(cropArea).Apply(bitmap);
-
-            // Resize the cropped image if necessary
-            if (scaleFactor > 1.0)
-            {
-                int newWidth = (int)(croppedFrame.Width * scaleFactor);
-                int newHeight = (int)(croppedFrame.Height * scaleFactor);
-
-                AForge.Imaging.Filters.ResizeBilinear filter = new AForge.Imaging.Filters.ResizeBilinear(newWidth, newHeight);
-                croppedFrame = filter.Apply(croppedFrame);
-            }
-
-            //// Display the zoomed frame in the VideoSourcePlayer control
-            croppedFrame.RotateFlip(RotateFlipType.RotateNoneFlipX);
-            //Cam_pic.Image = croppedFrame;
-
-            OverlayImage(croppedFrame);
-        }
-
-        private void OverlayImage(Bitmap baseImage)
-        {
-            if (!result_panel.Visible)
-            {
-                x1 = (desiredWidth / 2) - 190;//กรอบใน
-                x3 = (desiredWidth / 2) - 300;//กรอบนอก
-
-                y1 = (desiredHeight / 2) - 200;//กรอบใน
-                y3 = (desiredHeight / 2) - 320;//กรอบนอก
-
-                Mat imgMat = baseImage.ToMat();
-                CvInvoke.CvtColor(imgMat, imgMat, ColorConversion.Bgr2Gray);
-                Image<Gray, byte> imgGray = imgMat.ToImage<Gray, byte>();
-
-                Rectangle[] rectangles = cascadeClassifier.DetectMultiScale(imgGray, 1.2, 1);
-
-                foreach (Rectangle rectangle in rectangles)
-                {
-                    using (Graphics graphics = Graphics.FromImage(baseImage))
-                    {
-                        using (Pen pen = new Pen(Color.Red, 3))
-                        {
-                            graphics.DrawRectangle(pen, rectangle);
-                            //int x1 = 0;//กรอบใน
-                            //int x3 = 0;//กรอบนอก
-
-                            //int y1 = 0;//กรอบใน
-                            //int y3 = 0;//กรอบนอก
-
-                            //int sizeX1 = 210;//กรอบนอก
-                            //int sizeX3 = 400;//กรอบนอก
-
-                            if ((
-                                rectangle.Location.X >= x3 &&  //จุดซ้ายบนของกรอบแดงต้องมากกว่ากรอบนอก
-                                rectangle.Location.X <= x1
-                                ) && (
-                                rectangle.Location.Y >= y3 &&
-                                rectangle.Location.Y <= y1
-                                ) &&
-                                rectangle.Size.Width >= 0 &&
-                                rectangle.Size.Height >= 0
-                                )
-                            {
-                                Setlb_txt(msg_fit);
-                                this.lb_txt.BackColor = Color.Green;
-                                FaceDetection();
-                            }
-                            else if (rectangle.Location.X < (x3 - 100))//|| rectangle.Location.X > (x3 + sizeX1))
-                            {
-                                Setlb_txt(msg_center);//ไม่อยู่ตรงกลาง
-                                this.lb_txt.BackColor = Color.Blue;
-                                PlayAudio(audio2, 6500);
-                                //SetPictureBoxLeft(true);
-                                //SetTimerClearText(true);
-                                Console.WriteLine("Left " + rectangle.Location.X);
-                            }
-                            else if (rectangle.Location.X < (x3 + 600))
-                            {
-                                Setlb_txt(msg_center);//ไม่อยู่ตรงกลาง
-                                this.lb_txt.BackColor = Color.Blue;
-                                PlayAudio(audio2, 6500);
-                                //SetPictureBoxRight(true);
-                                //SetTimerClearText(true);
-                                Console.WriteLine("Right " + rectangle.Location.X);
-                            }
-                            else if (rectangle.Width <= sizeX3)
-                            {
-                                Setlb_txt(msg_near);//ไกลเกินไป
-                                this.lb_txt.BackColor = Color.Red;
-                                PlayAudio(audio4, 6500);
-                                //SetTimerClearText(true);
-                                Console.WriteLine("Too far " + rectangle.Width);
-                            }
-                            else if (rectangle.Width >= sizeX1)
-                            {
-                                Setlb_txt(msg_far);//ใกล้เกินไป
-                                this.lb_txt.BackColor = Color.Red;
-                                PlayAudio(audio4, 6500);
-                                //SetTimerClearText(true);
-                                Console.WriteLine("Too close " + rectangle.Width);
-                            }
-                        }
-                    }
-                }
-                #region comment
-                //using (Graphics g = Graphics.FromImage(baseImage))
-                //{
-                //    //g.DrawImage(overlayImage, new Rectangle(new Point(0, 0), new Size(baseImage.Width, baseImage.Height)));
-
-                //    g.DrawRectangle(new Pen(Color.Yellow, 3), new Rectangle(new Point(x1, y1), new Size(380, 380))); //กรอบใน
-                //    g.DrawRectangle(new Pen(Color.Blue, 3), new Rectangle(new Point(x3, y3), new Size(600, 620)));//กรอบนอก
-
-                //    g.DrawRectangle(new Pen(Color.White, 3), new Rectangle(new Point(desiredWidth / 2, 1), new Size(1, desiredHeight)));
-                //    g.DrawRectangle(new Pen(Color.White, 3), new Rectangle(new Point(1, desiredHeight / 2), new Size(desiredWidth, 1)));
-                //}
-
-                //hid_canv.Image = baseImage;
-                #endregion
-            }
-            else
-            {
-                //Do nothing
-            }
-
-            Cam_pic.Image = baseImage;
-            //baseImage.Dispose();
-        }
-
-        private void SetResolution(VideoCaptureDevice videoSource)
-        {
-            VideoCapabilities[] videoCapabilities = videoSource.VideoCapabilities;
-            foreach (VideoCapabilities capabilty in videoCapabilities)
-            {
-                if (capabilty.FrameSize.Width == desiredWidth && capabilty.FrameSize.Height == desiredHeight)
-                {
-                    videoSource.VideoResolution = capabilty;
-                    break;
-                }
-            }
-        }
-
-        public byte[] ImageToByteArray(System.Drawing.Image imageIn)
-        {
-            using (var ms = new MemoryStream())
-            {
-                imageIn.Save(ms, imageIn.RawFormat);
-                return ms.ToArray();
-            }
-        }
-
+        #region Set Delegate Func
         delegate void SetSetlbTxtCallback(string text);
         delegate void SetlbRemarkCallback(string text);
-        //delegate void SetPictureBox3Callback(bool c);
-        //delegate void SetPictureBox4Callback(bool c);
         delegate void SetVideoSourceCallback(VideoCaptureDevice c);
         delegate void SetPictureBoxLeftCallback(bool c);
         delegate void SetPictureBoxRightCallback(bool c);
         delegate void SetOverlayBoxCallback(bool c);
         delegate void SetResultBoxCallback(bool c);
-        //delegate void Setpnl_no_retryCallback(bool c);
+        delegate void Setpnl_no_retryCallback(bool status, bool c);
+        delegate void SetPictureBox3Callback(bool c);
         private void SetVideoSource(VideoCaptureDevice c)
         {
             if (this.loading_box.InvokeRequired)
@@ -781,18 +937,6 @@ namespace LoxleyOrbit.FaceScan
             {
                 videoSource.SignalToStop();
                 videoSource = c;
-            }
-        }
-        private void CloseForm()
-        {
-            if (this.InvokeRequired)
-            {
-                this.Invoke(new Action(CloseForm));
-            }
-            else
-            {
-                RESET_CAMERA();
-                this.Close();
             }
         }
         private void Setlb_txt(string text)
@@ -809,7 +953,6 @@ namespace LoxleyOrbit.FaceScan
                 lb_txt.Location = new Point() { X = (this.Width / 2) - (lb_txt.Width / 2), Y = 30 };
             }
         }
-
         private void Setlb_remark(string text)
         {
             int y = this.Height;
@@ -826,8 +969,6 @@ namespace LoxleyOrbit.FaceScan
                 //lb_remark.Location = new Point() { X = (this.Width / 2) - (lb_remark.Width / 2), Y = y - 100 };
             }
         }
-
-        delegate void SetPictureBox3Callback(bool c);
         private void SetPictureBox3(bool c)
         {
             // InvokeRequired required compares the thread ID of the
@@ -844,7 +985,6 @@ namespace LoxleyOrbit.FaceScan
                 loading_box.BringToFront();
             }
         }
-
         private void SetOverlayBox(bool c)
         {
             // InvokeRequired required compares the thread ID of the
@@ -864,7 +1004,6 @@ namespace LoxleyOrbit.FaceScan
                 this.Overlay_box.Visible = c;
             }
         }
-
         private void SetResultBox(bool c)
         {
             // InvokeRequired required compares the thread ID of the
@@ -880,7 +1019,6 @@ namespace LoxleyOrbit.FaceScan
                 this.result_panel.Visible = c;
             }
         }
-
         private void SetTimerClearText(bool c)
         {
             if (c)
@@ -901,6 +1039,19 @@ namespace LoxleyOrbit.FaceScan
         {
             Setlb_txt("");
         }
+        private void CloseForm()
+        {
+            if (this.InvokeRequired)
+            {
+                this.Invoke(new Action(CloseForm));
+            }
+            else
+            {
+                RESET_CAMERA();
+                this.Close();
+            }
+        }
+        #endregion
 
         #region Handler
         // Handler for the LoadCompleted event.
@@ -916,38 +1067,6 @@ namespace LoxleyOrbit.FaceScan
             Console.WriteLine("Change File");
         }
         #endregion
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            SetResultBox(true);
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            result_panel.Visible = false;
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            result_panel.Visible = false;
-            videoSource.SignalToStop();
-
-            this.Close();
-            //exit
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            //faceResult.Show();
-            Set_result(true, true);
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            //faceResult.Close();
-            Set_result(false,true);
-        }
 
         #region pnl_no_retry
         //delegate void Setpnl_no_retryCallback(bool c);
@@ -993,13 +1112,13 @@ namespace LoxleyOrbit.FaceScan
         //    }
         //}
 
-        delegate void Setpnl_no_retryCallback(bool status, bool c);
+
         private void Set_result(bool status, bool c)
         {
             if (this.pnl_no_retry.InvokeRequired)
             {
                 Setpnl_no_retryCallback d = new Setpnl_no_retryCallback(Set_result);
-                this.Invoke(d, new object[] { status , c });
+                this.Invoke(d, new object[] { status, c });
             }
             else
             {
@@ -1037,11 +1156,61 @@ namespace LoxleyOrbit.FaceScan
             }
         }
 
-
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             pnl_no_retry.Visible = false;
+            CloseForm();
         }
         #endregion
+
+        #region result_panel
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            result_panel.Visible = false;
+        }//สแกนซ้ำ
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            result_panel.Visible = false;
+            videoSource.SignalToStop();
+
+            CloseForm();
+            //exit
+        }//ยกเลิก
+        #endregion
+
+        #region Unit Test button
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //FaceDetection();
+            //CAPTURE_Click(null, null);
+            //ClearVideo();
+            CloseFrom("ต้องการทำการ eKYC ใหม่หรือไม่?", "แจ้งเตือน");
+        }
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SetResultBox(true);
+        }//Retry
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+            Set_result(true, true);
+        }//Pass
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Set_result(false,true);
+        }//Fail
+
+        private void close_result_Click(object sender, EventArgs e)
+        {
+            Set_result(false, false);
+        }//Close Panel Pass/Fail
+        #endregion
+
+
     }
+
+
 }

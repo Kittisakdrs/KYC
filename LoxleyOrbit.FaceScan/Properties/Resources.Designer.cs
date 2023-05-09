@@ -113,9 +113,49 @@ namespace LoxleyOrbit.FaceScan.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap button_no {
+            get {
+                object obj = ResourceManager.GetObject("button_no", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap button_ok {
             get {
                 object obj = ResourceManager.GetObject("button_ok", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap button_retry {
+            get {
+                object obj = ResourceManager.GetObject("button_retry", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap button_retry_2 {
+            get {
+                object obj = ResourceManager.GetObject("button_retry_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap button_retry_21 {
+            get {
+                object obj = ResourceManager.GetObject("button_retry_21", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -107,6 +107,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="APIHelper.cs" />
+    <Compile Include="Custom_component\Component1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Custom_component\Component1.Designer.cs">
+      <DependentUpon>Component1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Custom_component\Rounded_Panel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="eKYCForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,6 +223,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\button_retry_21.png" />
+    <None Include="Resources\button_retry_2.png" />
+    <None Include="Resources\button_retry.png" />
+    <None Include="Resources\button_no.png" />
     <Content Include="Resources\button_ok.png" />
     <None Include="Resources\Load_Clock1.gif" />
     <None Include="Resources\button_ok1.png" />
