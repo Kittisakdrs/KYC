@@ -560,9 +560,11 @@ namespace LoxleyOrbit.FaceScan
         //}
         #endregion
 
+        bool Detection = true;
+
         private void OverlayImage(Bitmap baseImage)
         {
-            if (!result_panel.Visible && !pnl_no_retry.Visible) //เมื่อยังไม่มีการแสดง Result ใดๆ
+            if (Detection) //เมื่อยังไม่มีการแสดง Result ใดๆ
             {
 
                 x1 = (desiredWidth / 2) - 190;//กรอบใน
@@ -839,6 +841,7 @@ namespace LoxleyOrbit.FaceScan
         }
         private void SetPictureBox3(bool c)
         {
+            Detection = !c;
             // InvokeRequired required compares the thread ID of the
             // calling thread to the thread ID of the creating thread.
             // If these threads are different, it returns true.
@@ -918,22 +921,6 @@ namespace LoxleyOrbit.FaceScan
             {
                 string fileName = @"Images/face-detect-set/fromCamera/" + m_txtID + ".jpg";
                 Cam_pic.Image.Save(fileName, ImageFormat.Jpeg);
-
-                try
-                {
-                    if (!(videoSource == null))
-                        if (videoSource.IsRunning)
-                        {
-                            SetVideoSource(null);
-
-                            videoSource = new VideoCaptureDevice(videoDevices[selected].MonikerString);
-                            SetResolution(videoSource);
-                            videoSource.NewFrame += new NewFrameEventHandler(video_NewFrame);
-                            videoSource.Start();
-                        }
-                }
-
-                catch { }
             }
         }
 
@@ -968,50 +955,6 @@ namespace LoxleyOrbit.FaceScan
         #endregion
 
         #region pnl_no_retry
-        //delegate void Setpnl_no_retryCallback(bool c);
-        //private void Set_result(bool status,bool c)
-        //{
-        //    if (this.pnl_no_retry.InvokeRequired)
-        //    {
-        //        Setpnl_no_retryCallback d = new Setpnl_no_retryCallback(SetResultBox);
-        //        this.Invoke(d, new object[] { c });
-
-        //        pnl_no_retry.Width = this.Width;
-        //        pnl_no_retry.Height = this.Height;
-        //        pnl_no_retry.Location = new Point(0, 0);
-        //        PictureBox pgif = pnl_no_retry.Controls["pictureBox1"] as PictureBox;
-        //        PictureBox pbtn = pnl_no_retry.Controls["pictureBox2"] as PictureBox;
-        //        pgif.Visible = false;
-        //        pbtn.Visible = false;
-
-        //        if (status)
-        //        {
-        //            pgif.Visible = true;
-        //            pgif.Image = Properties.Resources.Check;
-        //            pgif.Location = new Point(1050, 600);
-        //            pgif.Width = 200;
-        //            pgif.Height = 200;
-        //            pnl_no_retry.BackgroundImage = Properties.Resources.bg1920_success;
-        //            pnl_no_retry.Visible = true;
-        //        }
-        //        else
-        //        {
-        //            pbtn.Visible = true;
-        //            pbtn.Image = Properties.Resources.button_ok;
-        //            pbtn.Width = 300;
-        //            pbtn.Height = 114;
-        //            pbtn.Location = new Point(pnl_no_retry.Width / 2 - pbtn.Width / 2, 780);
-        //            pnl_no_retry.BackgroundImage = Properties.Resources.bg1920_fail;
-        //            pnl_no_retry.Visible = true;
-        //        }
-        //    }
-        //    else
-        //    {
-        //        this.result_panel.Visible = c;
-        //    }
-        //}
-
-
         private void Set_result(bool status, bool c)
         {
             if (this.pnl_no_retry.InvokeRequired)
@@ -1065,6 +1008,7 @@ namespace LoxleyOrbit.FaceScan
         #region result_panel
         private void pictureBox4_Click(object sender, EventArgs e)
         {
+            Detection = true;
             result_panel.Visible = false;
             RESET_CAMERA();
             selected = comboBox1.SelectedIndex;
