@@ -607,47 +607,33 @@ namespace LoxleyOrbit.FaceScan
                             graphics.DrawRectangle(new Pen(Color.Yellow, 3), new Rectangle(new Point(x1, y1), new Size(380, 380))); //กรอบใน
                             graphics.DrawRectangle(new Pen(Color.Blue, 3), new Rectangle(new Point(x3, y3), new Size(600, 620)));//กรอบนอก
 
-                            if (!Dzone.Contains(Fzone))
+                            if(Dzone.Contains(Fzone) && Fzone.Contains(Lzone))
                             {
-                                if (Fzone.Left < Dzone.Left)
-                                {
-                                    Setlb_txt(msg_center);//ไม่อยู่ตรงกลาง
-                                    this.lb_txt.BackColor = Color.Blue;
-                                    PlayAudio(audio2, 6500);
-                                    Console.WriteLine("Left");
-                                }
-                                else if (Fzone.Right > Dzone.Right)
-                                {
-                                    Setlb_txt(msg_center);//ไม่อยู่ตรงกลาง
-                                    this.lb_txt.BackColor = Color.Blue;
-                                    PlayAudio(audio2, 6500);
-                                    Console.WriteLine("Right");
-                                }
-                                else
-                                {
-                                    if (Lzone.Contains(Fzone))
-                                    {
-                                        Console.WriteLine("Step back");
-                                        Setlb_txt(msg_far);//ใกล้เกินไป
-                                        this.lb_txt.BackColor = Color.Red;
-                                        PlayAudio(audio4, 6500);
-                                        //SetTimerClearText(true);
-                                    }
-                                    else if (Fzone.Contains(Lzone) && Fzone.Contains(Dzone))
-                                    {
-                                        Console.WriteLine("Step in");
-                                        Setlb_txt(msg_far);//ใกล้เกินไป
-                                        this.lb_txt.BackColor = Color.Red;
-                                        PlayAudio(audio4, 6500);
-                                    }
-                                }
-                            }
-                            else if (Fzone.Contains(Lzone))
-                            {
-                                Console.WriteLine("Booya");
+                                Console.WriteLine("Booya"); //ผ่าน
                                 Setlb_txt(msg_fit);
                                 this.lb_txt.BackColor = Color.Green;
                                 FaceDetection();
+                            }
+                            else if (Dzone.Contains(Fzone))
+                            {
+                                Console.WriteLine("Too Far");
+                                Setlb_txt(msg_adjust);//ไกลเกินไป
+                                this.lb_txt.BackColor = Color.Red;
+                                PlayAudio(audio4, 6500);
+                            }
+                            else if (Fzone.Contains(Dzone))
+                            {
+                                Console.WriteLine("Too Close");
+                                Setlb_txt(msg_adjust);//ใกล้เกินไป
+                                this.lb_txt.BackColor = Color.Red;
+                                PlayAudio(audio4, 6500);
+                            }
+                            else
+                            {
+                                Setlb_txt(msg_center);//ไม่อยู่ตรงกลาง
+                                this.lb_txt.BackColor = Color.Blue;
+                                PlayAudio(audio2, 6500);
+                                Console.WriteLine("Please Center");
                             }
                         }
                     }
@@ -657,107 +643,9 @@ namespace LoxleyOrbit.FaceScan
             {
                 //do nothing
             }
-            //if (!result_panel.Visible) // ถ้า Result Panel ไม่แสดงจะทำการประมวลผลตามปกติ
-            //{
-            //    x1 = (desiredWidth / 2) - 190;//กรอบใน
-            //    x3 = (desiredWidth / 2) - 300;//กรอบนอก
-
-            //    y1 = (desiredHeight / 2) - 200;//กรอบใน
-            //    y3 = (desiredHeight / 2) - 320;//กรอบนอก
-
-            //    Mat imgMat = baseImage.ToMat();
-            //    CvInvoke.CvtColor(imgMat, imgMat, ColorConversion.Bgr2Gray);
-            //    Image<Gray, byte> imgGray = imgMat.ToImage<Gray, byte>();
-
-            //    Rectangle[] rectangles = cascadeClassifier.DetectMultiScale(imgGray, 1.2, 1);
-            //    foreach (Rectangle rectangle in rectangles)
-            //    {
-            //        using (Graphics graphics = Graphics.FromImage(baseImage))
-            //        {
-            //            using (Pen pen = new Pen(Color.Red, 3))
-            //            {
-            //                graphics.DrawRectangle(pen, rectangle);
-            //                //int x1 = 0;//กรอบใน
-            //                //int x3 = 0;//กรอบนอก
-
-            //                //int y1 = 0;//กรอบใน
-            //                //int y3 = 0;//กรอบนอก
-
-            //                //int sizeX1 = 210;//กรอบนอก
-            //                //int sizeX3 = 400;//กรอบนอก
-
-            //                if ((
-            //                    rectangle.Location.X >= x3 &&  //จุดซ้ายบนของกรอบแดงต้องมากกว่ากรอบนอก
-            //                    rectangle.Location.X <= x1
-            //                    ) && (
-            //                    rectangle.Location.Y >= y3 &&
-            //                    rectangle.Location.Y <= y1
-            //                    ) &&
-            //                    rectangle.Size.Width >= 0 &&
-            //                    rectangle.Size.Height >= 0
-            //                    )
-            //                {
-            //                    Setlb_txt(msg_fit);
-            //                    this.lb_txt.BackColor = Color.Green;
-            //                    FaceDetection();
-            //                }
-            //                else if (rectangle.Location.X < (x3 - 100))//|| rectangle.Location.X > (x3 + sizeX1))
-            //                {
-            //                    Setlb_txt(msg_center);//ไม่อยู่ตรงกลาง
-            //                    this.lb_txt.BackColor = Color.Blue;
-            //                    PlayAudio(audio2, 6500);
-            //                    //SetPictureBoxLeft(true);
-            //                    //SetTimerClearText(true);
-            //                    Console.WriteLine("Left " + rectangle.Location.X);
-            //                }
-            //                else if (rectangle.Location.X < (x3 + 600))
-            //                {
-            //                    Setlb_txt(msg_center);//ไม่อยู่ตรงกลาง
-            //                    this.lb_txt.BackColor = Color.Blue;
-            //                    PlayAudio(audio2, 6500);
-            //                    //SetPictureBoxRight(true);
-            //                    //SetTimerClearText(true);
-            //                    Console.WriteLine("Right " + rectangle.Location.X);
-            //                }
-            //                else if (rectangle.Width <= sizeX3)
-            //                {
-            //                    Setlb_txt(msg_near);//ไกลเกินไป
-            //                    this.lb_txt.BackColor = Color.Red;
-            //                    PlayAudio(audio4, 6500);
-            //                    //SetTimerClearText(true);
-            //                    Console.WriteLine("Too far " + rectangle.Width);
-            //                }
-            //                else if (rectangle.Width >= sizeX1)
-            //                {
-            //                    Setlb_txt(msg_far);//ใกล้เกินไป
-            //                    this.lb_txt.BackColor = Color.Red;
-            //                    PlayAudio(audio4, 6500);
-            //                    //SetTimerClearText(true);
-            //                    Console.WriteLine("Too close " + rectangle.Width);
-            //                }
-            //            }
-            //        }
-            //    }
-            //    #region comment
-            //    //using (Graphics g = Graphics.FromImage(baseImage))
-            //    //{
-            //    //    //g.DrawImage(overlayImage, new Rectangle(new Point(0, 0), new Size(baseImage.Width, baseImage.Height)));
-
-            //    //    g.DrawRectangle(new Pen(Color.Yellow, 3), new Rectangle(new Point(x1, y1), new Size(380, 380))); //กรอบใน
-            //    //    g.DrawRectangle(new Pen(Color.Blue, 3), new Rectangle(new Point(x3, y3), new Size(600, 620)));//กรอบนอก
-
-            //    //    g.DrawRectangle(new Pen(Color.White, 3), new Rectangle(new Point(desiredWidth / 2, 1), new Size(1, desiredHeight)));
-            //    //    g.DrawRectangle(new Pen(Color.White, 3), new Rectangle(new Point(1, desiredHeight / 2), new Size(desiredWidth, 1)));
-            //    //}
-            //    #endregion
-            //}
-            //else
-            //{
-            //    //Do nothing
-            //}
-
             Cam_pic.Image = baseImage;
         }
+
         private void FaceDetection()
         {
             isAudioPlaying = true;
@@ -1208,7 +1096,6 @@ namespace LoxleyOrbit.FaceScan
             Set_result(false, false);
         }//Close Panel Pass/Fail
         #endregion
-
 
     }
 
