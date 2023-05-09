@@ -190,7 +190,7 @@ namespace LoxleyOrbit.FaceScan
             loading_box.Location = new Point(lx, ly);
             loading_box.BackColor = Color.Transparent;
 
-            lb_remark.Visible = false;
+            lb_remark.Visible = true;
             lb_remark.Location = new Point() { X = (this.Width / 2) - (lb_remark.Width / 2), Y = y - 100 };
             lb_remark.Text = mgs_remark;
 
@@ -633,14 +633,11 @@ namespace LoxleyOrbit.FaceScan
 
         private void FaceDetection()
         {
-            isAudioPlaying = true;
             SetPictureBox3(true);
+            isAudioPlaying = true;
             SetOverlayBox(true);
-
             PlayAudio(audio3, 3900);
             CAPTURE_Click(null, null);
-            //Task.Delay(2000).Wait();
-            //RESET_CAMERA();
             Setlb_txt("");
             Setlb_remark("");
 
@@ -700,10 +697,9 @@ namespace LoxleyOrbit.FaceScan
 
             if (Same == 1)
             {
+                SetPictureBox3(false);
                 Set_result(true,true); // Result ผ่าน
-                MessageBoxButtons buttons = MessageBoxButtons.OK;
-                DialogResult result = MessageBox.Show("MATCH", "แจ้งเตือน", buttons);
-                SetPictureBox3(false); // Loading
+                 // Loading
             }
             else
             {
@@ -877,6 +873,7 @@ namespace LoxleyOrbit.FaceScan
         }
         private void SetResultBox(bool c)
         {
+            Detection = !c;
             // InvokeRequired required compares the thread ID of the
             // calling thread to the thread ID of the creating thread.
             // If these threads are different, it returns true.
@@ -957,6 +954,8 @@ namespace LoxleyOrbit.FaceScan
         #region pnl_no_retry
         private void Set_result(bool status, bool c)
         {
+            Detection = !c;
+            RESET_CAMERA();
             if (this.pnl_no_retry.InvokeRequired)
             {
                 Setpnl_no_retryCallback d = new Setpnl_no_retryCallback(Set_result);
@@ -1040,7 +1039,6 @@ namespace LoxleyOrbit.FaceScan
 
         private void button5_Click(object sender, EventArgs e)
         {
-
             Set_result(true, true);
         }//Pass
 
