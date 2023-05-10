@@ -47,6 +47,8 @@ namespace LoxleyOrbit.FaceScan
         public static int gondermesayisi = 0;
         public int kamerabaslat = 0;
         private bool chkCamera = true;
+        public bool Detection = false;
+        private string Closing_State = "";
 
         public string m_txtID = "1570800044928";
         public string m_type = "ID";
@@ -86,6 +88,23 @@ namespace LoxleyOrbit.FaceScan
         private int lasttimeOut = 0;
         private bool isAudioPlaying = true;
         private SoundPlayer player;
+
+        #region Delay_Detection
+        private DateTime dateTimeStart_delay = DateTime.Now;
+        static int Delay_detection = 6500;
+        private TimeSpan Delay_Count = new TimeSpan();
+        private double milisec = 0;
+        private bool IsDelay_Active = false;
+        #endregion
+
+        #region Delay_Close_Form
+        private DateTime dateTimeStart_Close = DateTime.Now;
+        static int Delay_Close = 6500;
+        private TimeSpan Delay_Count_c = new TimeSpan();
+        private double milisec_c = 0;
+        private bool IsDelay_C_Active = false;
+        #endregion
+
         #endregion
 
         public FormKYC()
@@ -163,7 +182,11 @@ namespace LoxleyOrbit.FaceScan
 
         private void FormKYC_Load(object sender, EventArgs e)
         {
+            Closing_State = "";
             SetPictureBox3(false);
+            SetOverlayBox(false);
+            Set_result(true,false);
+
             //Automatic Select Camera 1
             selected = comboBox1.SelectedIndex;
             START_Click(null, null);
@@ -233,6 +256,22 @@ namespace LoxleyOrbit.FaceScan
 
         private void FormKYC_FormClosing(object sender, FormClosingEventArgs e)
         {
+            FormPID pid = (FormPID)Application.OpenForms["FormPID"];
+            if (Closing_State == "Pass")
+            {
+                pid.trigger_when_Close("Pass");
+            }
+
+            else if(Closing_State == "Fail")
+            {
+                pid.trigger_when_Close("Fail");
+            }
+
+            else if (Closing_State == "Close")
+            {
+                pid.trigger_when_Close("Close");
+            }
+
             if (this.Owner != null)
             {
                 this.Owner.Show();
@@ -244,26 +283,30 @@ namespace LoxleyOrbit.FaceScan
         #region Audio Control
         private void PlayAudio(string audio, int timeOut)
         {
-            //SoundPlayer soundPlayer = new SoundPlayer(audio);
-            player.SoundLocation = audio;
-
             try
             {
+                //SoundPlayer soundPlayer = new SoundPlayer(audio);
+                player.SoundLocation = audio;
+                if(audio == audio1) // เมื่อเล่นเสียง Audio1 จะเริ่มนับถอยหลัง
+                {
+                    dateTimeStart_delay = DateTime.Now;
+                    IsDelay_Active = true;
+                }
                 TimeSpan timedddd = DateTime.Now - dateTimeStart;
                 totalMilliseconds = timedddd.TotalMilliseconds;
                 //txt_log.Items.Add(audio + " = " + isAudioPlaying + " == " + totalMilliseconds + " >= " + lasttimeOut);
 
-                if (isAudioPlaying || totalMilliseconds >= lasttimeOut)
-                {
-                    lasttimeOut = timeOut;
-                    totalMilliseconds = 0;
-                    dateTimeStart = DateTime.Now;
-                    isAudioPlaying = false;
-                    player.Play();
-                    TimerClearAudio.Enabled = true;
-                    TimerClearAudio.Interval = timeOut;
-                    TimerClearAudio.Start();
-                }
+                    if (isAudioPlaying || totalMilliseconds >= lasttimeOut)
+                    {
+                        lasttimeOut = timeOut;
+                        totalMilliseconds = 0;
+                        dateTimeStart = DateTime.Now;
+                        isAudioPlaying = false;
+                        player.Play();
+                        TimerClearAudio.Enabled = true;
+                        TimerClearAudio.Interval = timeOut;
+                        TimerClearAudio.Start();
+                    }
             }
             catch (Exception ex)
             {
@@ -330,9 +373,7 @@ namespace LoxleyOrbit.FaceScan
                 try
                 {
                     videoSource = new VideoCaptureDevice(videoDevices[selected].MonikerString);
-
                     SetResolution(videoSource);
-
                     videoSource.NewFrame += new NewFrameEventHandler(video_NewFrame);
                     Setlb_remark(mgs_remark);
                     SetOverlayBox(true);
@@ -341,7 +382,7 @@ namespace LoxleyOrbit.FaceScan
                     isAudioPlaying = true;
                     PlayAudio(audio1, 6500);
                     kamerabaslat = 1; //CAMERA STARTRED
-
+                    Detection = false;
                 }
                 catch (Exception ex)
                 {
@@ -560,11 +601,44 @@ namespace LoxleyOrbit.FaceScan
         //}
         #endregion
 
-        bool Detection = true;
-
         private void OverlayImage(Bitmap baseImage)
         {
-            if (Detection) //เมื่อยังไม่มีการแสดง Result ใดๆ
+            #region Delay_Detection
+                Delay_Count = DateTime.Now - dateTimeStart_delay;
+                milisec = Delay_Count.TotalMilliseconds;
+
+                //Console.WriteLine(milisec);
+                if ((milisec >= Delay_detection) && IsDelay_Active && !pnl_no_retry.Visible)
+                {
+                    Console.WriteLine("BABO");
+                    IsDelay_Active = false;
+                    Detection = true;
+                }
+            #endregion
+
+            #region Delay_Close_Form
+            Delay_Count_c = DateTime.Now - dateTimeStart_Close;
+            milisec_c = Delay_Count_c.TotalMilliseconds;
+
+            if ((milisec_c >= Delay_Close) && IsDelay_C_Active && pnl_no_retry.Visible)
+            {
+                PictureBox pbtn = pnl_no_retry.Controls["pictureBox2"] as PictureBox;
+                if (pbtn.Visible)
+                {//กรณี Fail
+                    CloseForm();
+                    //webBrowser.Navigate("http://test-kiosk.chulacareapp.com/OneMLWeb/SelectUserType.aspx");
+                    IsDelay_Active = false;
+                }
+                else
+                {//กรณี Pass
+                    CloseForm();
+                    //webBrowser.Navigate("http://test-kiosk.chulacareapp.com/OneMLWeb/User_detail.aspx?facedetection=off");
+                    IsDelay_Active = false;
+                }
+            }
+            #endregion
+
+            if (Detection)
             {
 
                 x1 = (desiredWidth / 2) - 190;//กรอบใน
@@ -668,9 +742,6 @@ namespace LoxleyOrbit.FaceScan
                 var face = APIHelper.FaceDetectorFromBase64(req).Result;
 
                 Same = face.Same;
-                //textBox1.Text = JsonConvert.SerializeObject(face);
-                //MessageBox.Show((face.Same == 1 ? "MATCH" : "Not MATCH"), "แจ้งเตือน");
-                //CloseFrom("ต้องการทำการ eKYC ใหม่หรือไม่?", "แจ้งเตือน");
             }
             else
             {
@@ -687,10 +758,6 @@ namespace LoxleyOrbit.FaceScan
                 var face = APIHelper.FaceDetectorFromPath(req).Result;
 
                 Same = face.Same;
-                //MessageBox.Show((face.Same == 1 ? "MATCH" : "Not MATCH"), "แจ้งเตือน");
-                //CloseFrom("ต้องการทำการ eKYC ใหม่หรือไม่?", "แจ้งเตือน");
-
-                //textBox1.Text = JsonConvert.SerializeObject(face);
             }
 
             APIHelper.StatusCodeSame = Same;
@@ -713,10 +780,6 @@ namespace LoxleyOrbit.FaceScan
                 {
                     Set_result(false,true); // Result ไม่ผ่าน
                 }
-
-
-                ////SetPictureBox4(false);
-                //CloseFrom("ต้องการทำการ eKYC ใหม่หรือไม่?", "แจ้งเตือน");
             }
         }
 
@@ -955,7 +1018,11 @@ namespace LoxleyOrbit.FaceScan
         private void Set_result(bool status, bool c)
         {
             Detection = !c;
-            RESET_CAMERA();
+            //RESET_CAMERA();
+
+            dateTimeStart_Close = DateTime.Now;
+            IsDelay_C_Active = true;
+
             if (this.pnl_no_retry.InvokeRequired)
             {
                 Setpnl_no_retryCallback d = new Setpnl_no_retryCallback(Set_result);
@@ -980,7 +1047,9 @@ namespace LoxleyOrbit.FaceScan
                     pgif.Height = 200;
                     pnl_no_retry.BackgroundImage = Properties.Resources.bg1920_success;
                     pnl_no_retry.Visible = true;
-                }
+
+                    Closing_State = "Pass";
+                } // Result ผ่าน
                 else
                 {
                     pbtn.Visible = true;
@@ -990,7 +1059,9 @@ namespace LoxleyOrbit.FaceScan
                     pbtn.Location = new Point(pnl_no_retry.Width / 2 - pbtn.Width / 2, 780);
                     pnl_no_retry.BackgroundImage = Properties.Resources.bg1920_fail;
                     pnl_no_retry.Visible = true;
-                }
+
+                    Closing_State = "Fail";
+                } // Result ไม่ผ่าน
 
                 // hide or show the panel depending on the value of the 'c' parameter
                 this.pnl_no_retry.Visible = c;
@@ -1000,14 +1071,15 @@ namespace LoxleyOrbit.FaceScan
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             pnl_no_retry.Visible = false;
+            Closing_State = "Fail";
             CloseForm();
+
         }
         #endregion
 
         #region result_panel
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            Detection = true;
             result_panel.Visible = false;
             RESET_CAMERA();
             selected = comboBox1.SelectedIndex;
@@ -1018,18 +1090,14 @@ namespace LoxleyOrbit.FaceScan
         {
             result_panel.Visible = false;
             videoSource.SignalToStop();
-
+            Closing_State = "Close";
             CloseForm();
-            //exit
         }//ยกเลิก
         #endregion
 
         #region Unit Test button
         private void button1_Click(object sender, EventArgs e)
         {
-            //FaceDetection();
-            //CAPTURE_Click(null, null);
-            //ClearVideo();
             CloseFrom("ต้องการทำการ eKYC ใหม่หรือไม่?", "แจ้งเตือน");
         }
         private void button4_Click(object sender, EventArgs e)

@@ -110,6 +110,18 @@ namespace LoxleyOrbit.FaceScan
             }
         }
 
+        public void trigger_when_Close(string state)
+        {
+            if (state == "Pass")
+            {
+                webBrowser.Navigate("http://test-kiosk.chulacareapp.com/OneMLWeb/User_detail.aspx?facedetection=off");
+            }
+            else
+            {
+                webBrowser.Navigate("http://test-kiosk.chulacareapp.com/OneMLWeb/SelectUserType.aspx");
+            }
+        }
+
         private void webBrowser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
             string text = webBrowser.DocumentTitle;
