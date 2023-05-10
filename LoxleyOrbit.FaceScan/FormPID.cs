@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -138,10 +139,11 @@ namespace LoxleyOrbit.FaceScan
                 object result = webBrowser.Document.InvokeScript("open_progress"); // second parameter is jsonString
             }));
 
+            bool photoRequired = true;
             Application.DoEvents();
             System.Threading.Thread.Sleep(200);
             reader = new IDReaderDotNetService("Identiv uTrust 2700 R Smart Card Reader 0", this);
-            DataTable table = reader.ReadData(false);
+            DataTable table = reader.ReadData(photoRequired);
 
             if (table != null)
             {
@@ -211,7 +213,18 @@ namespace LoxleyOrbit.FaceScan
                     + "&e_m_name=" + e_m_name
                     + "&e_l_name=" + e_l_name;
 
-                webBrowser.Navigate("http://test-kiosk.chulacareapp.com/OneMLWeb/SelectUserType.aspx");
+                if (photoRequired)
+                {
+                    string fileName = @"Images/face-detect-set/fromReaderCard/" + id + ".jpg";
+                    byte[] bytes1 = (byte[])table.Rows[0]["Photo"];
+                    //string result = System.Text.Encoding.UTF8.GetString(table.Rows[0]["Photo"]);
+
+                    using (MemoryStream ms = new MemoryStream(bytes1))
+                    {
+                        Image.FromStream(ms).Save(fileName, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    }
+                }
+                webBrowser.Navigate("http://test-kiosk.chulacareapp.com/OneMLWeb/User_Hn.aspx?"+ param);
 
                 LaunchCamera("");
 
