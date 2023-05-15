@@ -182,6 +182,7 @@ namespace LoxleyOrbit.FaceScan
 
         private void FormKYC_Load(object sender, EventArgs e)
         {
+            RESET_CAMERA();
             Closing_State = "";
             SetPictureBox3(false);
             SetOverlayBox(false);
@@ -256,27 +257,47 @@ namespace LoxleyOrbit.FaceScan
 
         private void FormKYC_FormClosing(object sender, FormClosingEventArgs e)
         {
-            FormPID pid = (FormPID)Application.OpenForms["FormPID"];
-            if (Closing_State == "Pass")
+            RESET_CAMERA();
+
+            if (e.CloseReason == CloseReason.UserClosing || e.CloseReason == CloseReason.ApplicationExitCall)
             {
-                pid.trigger_when_Close("Pass");
+                // Close all forms in the application
+                //Application.Exit();
             }
 
-            else if(Closing_State == "Fail")
+            #region PID
+            try
             {
-                pid.trigger_when_Close("Fail");
-            }
+                FormPID pid = (FormPID)Application.OpenForms["FormPID"];
+                if (pid != null)
+                {
+                    if (Closing_State == "Pass")
+                    {
+                        pid.trigger_when_Close("Pass");
+                    }
 
-            else if (Closing_State == "Close")
-            {
-                pid.trigger_when_Close("Close");
-            }
+                    else if (Closing_State == "Fail")
+                    {
+                        pid.trigger_when_Close("Fail");
+                    }
 
-            if (this.Owner != null)
+                    else if (Closing_State == "Close")
+                    {
+                        pid.trigger_when_Close("Close");
+                    }
+
+                    if (this.Owner != null)
+                    {
+                        this.Owner.Show();
+                        this.Owner.Focus();
+                    }
+                }
+            }catch(Exception ex)
             {
-                this.Owner.Show();
-                this.Owner.Focus();
+                Console.WriteLine(ex.Message);
+                //Application.Exit();
             }
+            #endregion
         }
 
 
@@ -430,69 +451,73 @@ namespace LoxleyOrbit.FaceScan
             //pictureBox2.Image = null;
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            timer1.Enabled = false;
-            timer1.Stop();
-        }
         private void video_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
-            if (radioButton1.Checked)
+            try
             {
-                scaleFactor = 1;
+                if (radioButton1.Checked)
+                {
+                    scaleFactor = 1;
+                }
+                else if (radioButton2.Checked)
+                {
+                    scaleFactor = 1.25;
+                }
+                else if (radioButton3.Checked)
+                {
+                    scaleFactor = 1.5;
+                }
+                else if (radioButton4.Checked)
+                {
+                    scaleFactor = 1.75;
+                }
+                else if (radioButton5.Checked)
+                {
+                    scaleFactor = 2;
+                }
+
+                Bitmap bitmap = (Bitmap)eventArgs.Frame.Clone();
+
+                int centerX = (int)(bitmap.Width * focusCenterX);
+                int centerY = (int)(bitmap.Height * focusCenterY);
+
+                // Calculate the crop area around the focus center point
+                int cropWidth = (int)(bitmap.Height * aspectRatio * (1.0 / scaleFactor));
+                int cropHeight = (int)(bitmap.Height * (1.0 / scaleFactor));
+                int cropX = centerX - cropWidth / 2;
+                int cropY = centerY - cropHeight / 2;
+                cropX = Math.Max(cropX, 0);
+                cropY = Math.Max(cropY, 0);
+                cropWidth = Math.Min(cropWidth, bitmap.Width - cropX);
+                cropHeight = Math.Min(cropHeight, bitmap.Height - cropY);
+                Rectangle cropArea = new Rectangle(cropX, cropY, cropWidth, cropHeight);
+
+                // Apply the crop filter to the video frame
+                Bitmap croppedFrame = new AForge.Imaging.Filters.Crop(cropArea).Apply(bitmap);
+
+                // Resize the cropped image if necessary
+                if (scaleFactor > 1.0)
+                {
+                    int newWidth = (int)(croppedFrame.Width * scaleFactor);
+                    int newHeight = (int)(croppedFrame.Height * scaleFactor);
+
+                    AForge.Imaging.Filters.ResizeBilinear filter = new AForge.Imaging.Filters.ResizeBilinear(newWidth, newHeight);
+                    croppedFrame = filter.Apply(croppedFrame);
+                }
+
+                //// Display the zoomed frame in the VideoSourcePlayer control
+                croppedFrame.RotateFlip(RotateFlipType.RotateNoneFlipX);
+                //Cam_pic.Image = croppedFrame;
+
+                OverlayImage(croppedFrame);
             }
-            else if (radioButton2.Checked)
+            catch (Exception ex)
             {
-                scaleFactor = 1.25;
+                Console.WriteLine(ex.Message);
+                Application.Exit();
             }
-            else if (radioButton3.Checked)
-            {
-                scaleFactor = 1.5;
-            }
-            else if (radioButton4.Checked)
-            {
-                scaleFactor = 1.75;
-            }
-            else if (radioButton5.Checked)
-            {
-                scaleFactor = 2;
-            }
-
-            Bitmap bitmap = (Bitmap)eventArgs.Frame.Clone();
-
-            int centerX = (int)(bitmap.Width * focusCenterX);
-            int centerY = (int)(bitmap.Height * focusCenterY);
-
-            // Calculate the crop area around the focus center point
-            int cropWidth = (int)(bitmap.Height * aspectRatio * (1.0 / scaleFactor));
-            int cropHeight = (int)(bitmap.Height * (1.0 / scaleFactor));
-            int cropX = centerX - cropWidth / 2;
-            int cropY = centerY - cropHeight / 2;
-            cropX = Math.Max(cropX, 0);
-            cropY = Math.Max(cropY, 0);
-            cropWidth = Math.Min(cropWidth, bitmap.Width - cropX);
-            cropHeight = Math.Min(cropHeight, bitmap.Height - cropY);
-            Rectangle cropArea = new Rectangle(cropX, cropY, cropWidth, cropHeight);
-
-            // Apply the crop filter to the video frame
-            Bitmap croppedFrame = new AForge.Imaging.Filters.Crop(cropArea).Apply(bitmap);
-
-            // Resize the cropped image if necessary
-            if (scaleFactor > 1.0)
-            {
-                int newWidth = (int)(croppedFrame.Width * scaleFactor);
-                int newHeight = (int)(croppedFrame.Height * scaleFactor);
-
-                AForge.Imaging.Filters.ResizeBilinear filter = new AForge.Imaging.Filters.ResizeBilinear(newWidth, newHeight);
-                croppedFrame = filter.Apply(croppedFrame);
-            }
-
-            //// Display the zoomed frame in the VideoSourcePlayer control
-            croppedFrame.RotateFlip(RotateFlipType.RotateNoneFlipX);
-            //Cam_pic.Image = croppedFrame;
-
-            OverlayImage(croppedFrame);
         }
+
 
         #region CMMD
         //private void OverlayImage(Bitmap baseImage)
@@ -662,7 +687,6 @@ namespace LoxleyOrbit.FaceScan
                         using (Pen pen = new Pen(Color.Red, 3))
                         {
                             graphics.DrawRectangle(pen, Fzone);
-
                             graphics.DrawRectangle(new Pen(Color.Yellow, 3), new Rectangle(new Point(x1, y1), new Size(380, 380))); //กรอบใน
                             graphics.DrawRectangle(new Pen(Color.Blue, 3), new Rectangle(new Point(x3, y3), new Size(600, 620)));//กรอบนอก
 
@@ -980,7 +1004,30 @@ namespace LoxleyOrbit.FaceScan
             else
             {
                 string fileName = @"Images/face-detect-set/fromCamera/" + m_txtID + ".jpg";
-                Cam_pic.Image.Save(fileName, ImageFormat.Jpeg);
+                //Cam_pic.Image.Save(fileName, ImageFormat.Jpeg);
+
+                // Step 1: Determine the size of the cropped portion
+                double cW = Cam_pic.Image.Width / 2.4; //More Divider = Less Resolution
+                double cH = Cam_pic.Image.Height / 1.25;
+                int cropWidth = Convert.ToInt32(cW);
+                int cropHeight = Convert.ToInt32(cH);
+
+                // Step 2: Determine the location of the cropped portion
+                double cX = (Cam_pic.Image.Width - cropWidth) / 2;
+                double cY = (Cam_pic.Image.Height - cropHeight) / 1.8;
+                int cropX = Convert.ToInt32(cX);
+                int cropY = Convert.ToInt32(cY);
+
+                // Step 3: Create a new Bitmap to hold the cropped portion
+                Bitmap croppedImage = new Bitmap(cropWidth, cropHeight);
+
+                // Step 4: Crop the image
+                using (Graphics g = Graphics.FromImage(croppedImage))
+                {
+                    g.DrawImage(Cam_pic.Image, new Rectangle(0, 0, cropWidth, cropHeight), new Rectangle(cropX, cropY, cropWidth, cropHeight), GraphicsUnit.Pixel);
+                }
+
+                croppedImage.Save(fileName, ImageFormat.Jpeg);
             }
         }
 
@@ -1121,6 +1168,10 @@ namespace LoxleyOrbit.FaceScan
         }//Close Panel Pass/Fail
         #endregion
 
+        private void FormKYC_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 
 

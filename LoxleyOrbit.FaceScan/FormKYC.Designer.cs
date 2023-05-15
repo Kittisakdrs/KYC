@@ -38,7 +38,6 @@ namespace LoxleyOrbit.FaceScan
             this.button1 = new System.Windows.Forms.Button();
             this.lb_txt = new System.Windows.Forms.Label();
             this.lb_remark = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
@@ -57,13 +56,13 @@ namespace LoxleyOrbit.FaceScan
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.pnl_no_retry = new System.Windows.Forms.Panel();
+            this.close_result = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.loading_box = new System.Windows.Forms.PictureBox();
             this.Overlay_box = new System.Windows.Forms.PictureBox();
             this.Cam_pic = new System.Windows.Forms.PictureBox();
-            this.close_result = new System.Windows.Forms.Button();
             this.result_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -167,10 +166,6 @@ namespace LoxleyOrbit.FaceScan
             this.lb_remark.TabIndex = 129;
             this.lb_remark.Text = "=============";
             this.lb_remark.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // radioButton1
             // 
@@ -354,6 +349,16 @@ namespace LoxleyOrbit.FaceScan
             this.pnl_no_retry.TabIndex = 145;
             this.pnl_no_retry.Visible = false;
             // 
+            // close_result
+            // 
+            this.close_result.Location = new System.Drawing.Point(3, 3);
+            this.close_result.Name = "close_result";
+            this.close_result.Size = new System.Drawing.Size(75, 23);
+            this.close_result.TabIndex = 2;
+            this.close_result.Text = "button2";
+            this.close_result.UseVisualStyleBackColor = true;
+            this.close_result.Click += new System.EventHandler(this.close_result_Click);
+            // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
@@ -408,16 +413,6 @@ namespace LoxleyOrbit.FaceScan
             this.Cam_pic.TabIndex = 148;
             this.Cam_pic.TabStop = false;
             // 
-            // close_result
-            // 
-            this.close_result.Location = new System.Drawing.Point(3, 3);
-            this.close_result.Name = "close_result";
-            this.close_result.Size = new System.Drawing.Size(75, 23);
-            this.close_result.TabIndex = 2;
-            this.close_result.Text = "button2";
-            this.close_result.UseVisualStyleBackColor = true;
-            this.close_result.Click += new System.EventHandler(this.close_result_Click);
-            // 
             // FormKYC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -451,6 +446,7 @@ namespace LoxleyOrbit.FaceScan
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormKYC";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormKYC_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormKYC_FormClosed);
             this.Load += new System.EventHandler(this.FormKYC_Load);
             this.result_panel.ResumeLayout(false);
             this.result_panel.PerformLayout();
@@ -478,7 +474,6 @@ namespace LoxleyOrbit.FaceScan
         private System.Windows.Forms.PictureBox Cam_pic;
         private System.Windows.Forms.Label lb_txt;
         private System.Windows.Forms.Label lb_remark;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox loading_box;
         private System.Windows.Forms.PictureBox Overlay_box;
         private System.Windows.Forms.RadioButton radioButton1;
